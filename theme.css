@@ -524,7 +524,7 @@ textarea { background: transparent !important; }
 
 .chat .divider > div { display: none; }
 
-.chat .new-messages-bar:hover { background-color: white; /*var(--hover-color);*/ }
+.chat .new-messages-bar:hover { background-color: var(--hover-color); }
 
 .chat-empty { background: rgba(20, 23, 27, 0.95); }
 
@@ -1273,7 +1273,7 @@ form.auth-form { background: rgba(0, 0, 0, 0.56); }
 
 .user-popout .footer { border-top: 2px var(--main-color) solid; }
 
-.user-popout .footer .quick-message-wrapper .input { border: 2px solid var(--main-color); background: #0C0C0C; color: #fff; }
+.user-popout .footer .quick-message-wrapper .input { border: 2px solid var(--main-color); background: #0C0C0C; color: /*#fff*/ white; }
 
 .theme-dark.context-menu .item:hover { background: rgba(0, 0, 0, 0.69); box-shadow: 0 0 1px rgba(0, 0, 0, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); cursor: pointer; }
 
