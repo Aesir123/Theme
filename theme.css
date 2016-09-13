@@ -2081,6 +2081,8 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .spinner-pulsing-ellipsis .spinner-item {background-color: var(--main-color);}
 
+.activity strong { color: var(--main-color); }
+
 /*
 
 */
