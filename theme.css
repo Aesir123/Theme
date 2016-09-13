@@ -2083,8 +2083,8 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .activity strong { color: var(--main-color); }
 
-.member:hover { background-color: rgba(255, 255, 255, 0.50); }
-.message-text .member {-webkit-transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); }
+/*.member:hover { background-color: rgba(255, 255, 255, 0.50); }*/
+.message-text/* .member*/ {-webkit-transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); }
 .message-text:hover {background-color: rgba(255, 255, 255, 0.15); border-radius: 3px; }
 
 /*
