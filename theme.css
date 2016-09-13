@@ -1956,7 +1956,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 #user-profile-modal .avatar-profile .status {border: 4px solid var(--hover-color);}
 
-.quick-message {border: 2px solid var(--main-color);background: rgba(0, 0, 0, 0.6); color: white;}
+.quick-message {border: 2px solid var(--main-color);background: rgba(0, 255, 0, 0.6); color: white;}
 
 /*Modal Menu re arrangement by Uri modified by me*/
 
