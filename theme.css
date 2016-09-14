@@ -8,12 +8,12 @@
 .user-popout {background: transparent !important;opacity: 1;}
 
 #user-profile-modal .header:before {
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://wallpaperscraft.com/image/demon_wings_forest_warrior_sword_protect_64954_3840x2160.jpg") !important;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://wallpaperscraft.com/image/demon_wings_forest_warrior_sword_protect_64954_3840x2160.jpg") !important;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url(var(--wlpimg)) !important;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url(var(--wlpimg)) !important;
     content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);}
 
 .user-popout:before {
-    background-image: url("https://wallpaperscraft.com/image/demon_wings_forest_warrior_sword_protect_64954_3840x2160.jpg") !important;
+    background-image: url(var(--wlpimg)) !important;
     content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);}
 
 
@@ -1082,7 +1082,7 @@ img.image { border-radius: 5px; }
 
 #pubs-footer { background: var(--main-color); }
 
-#pubs-container { background-image: url("https://imgur.com/RG03PyX.png") !important; transition: 0.3s all ease; background-size: cover !important; }
+#pubs-container { background-image: url(var(--wlpimg)) !important; transition: 0.3s all ease; background-size: cover !important; }
 
 #bd-customcss-attach-controls { border: 2px solid var(--main-color); border-top: 1px solid var(--main-color); border-radius: 4px; }
 
@@ -1308,7 +1308,7 @@ form.auth-form { background: rgba(0, 0, 0, 0.56); }
 
 .private-channels .channel .channel-game strong { font-weight: 700; color: var(--main-color); }
 
-.auth-background { background-image: url("https://imgur.com/RG03PyX.png") !important; background-size: cover !important; }
+.auth-background { background-image: url(var(--wlpimg)) !important; background-size: cover !important; }
 
 .auth-copyright { color: #FFFFFF; opacity: .8; font-weight: bold; border: 2px #fff solid; background: #000; border-radius: 3px; }
 
@@ -1412,7 +1412,7 @@ div#bd-customcss-innerpane { margin-top: 18px; width: 588px; margin-left: -34px;
 
 .guild-channels ul .channel-voice .channel-arrow:hover { background-color: var(--main-color); }
 
-.auth-tiling-bg { background-color: #2e3136; background-image: url("https://imgur.com/RG03PyX.png") !important; }
+.auth-tiling-bg { background-color: #2e3136; background-image: url(var(--wlpimg)) !important; }
 
 .create-guild-container .action.create .action-icon, .create-guild-container .action.join .action-icon { -webkit-filter: invert(100%) hue-rotate(145deg); }
 
@@ -2090,22 +2090,23 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 
 
-.app { background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important; background-size: cover !important; }
+.app { background-image: url(var(--wlpimg)) !important; background-size: cover !important; }
 
-.callout-backdrop { background-color: black !important; background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important; -webkit-transition: 0.3s all ease; -o-transition: 0.3s all ease; -moz-transition: 0.3s all ease; transition: 0.3s all ease; background-size: cover !important; -webkit-filter: brightness(75%); }
+.callout-backdrop { background-color: black !important; background-image: url(var(--wlpimg)) !important; -webkit-transition: 0.3s all ease; -o-transition: 0.3s all ease; -moz-transition: 0.3s all ease; transition: 0.3s all ease; background-size: cover !important; -webkit-filter: brightness(75%); }
 
 .user-popout:before {
-    background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
+    background-image: url(var(--wlpimg)) !important;
     content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);}
 
 #user-profile-modal .header:before {
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url(var(--wlpimg)) !important;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url(var(--wlpimg)) !important;
     content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);}
 
 :root { 
  --main-color: #057F95;
  --hover-color: #045B6B;
+ --wlpimg: "https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png";
  }
 
 /*
