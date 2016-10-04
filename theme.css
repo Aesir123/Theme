@@ -2190,7 +2190,13 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 }
 
 canvas {
-  overflow: hidden;
-  background: #111;
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: #111;
 }
 
