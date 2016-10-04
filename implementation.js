@@ -1,4 +1,4 @@
 function main()
 {
-	alert("i'm working c:");
+//	alert("i'm working c:");
 }
