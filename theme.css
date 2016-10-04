@@ -1,4 +1,15 @@
 
+canvas {
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+	background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
+    background-size: cover;
+}
 /* Modal start*/
 .modal {
     opacity: 1!important;
@@ -2189,15 +2200,4 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	background-color:#19191b !important;
 }
 
-canvas {
-	position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    overflow: hidden;
-	background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    background-size: cover;
-}
 
