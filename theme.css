@@ -2197,6 +2197,7 @@ canvas {
     right: 0;
     z-index: -1;
     overflow: hidden;
-    background: #111;
+	background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
+    background-size: cover;
 }
 
