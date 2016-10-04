@@ -2189,3 +2189,8 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	background-color:#19191b !important;
 }
 
+canvas {
+  overflow: hidden;
+  background: #111;
+}
+
