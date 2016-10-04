@@ -1,4 +1,6 @@
-
+.app {
+	behavior:url(https://rawgit.com/Aesir123/Theme/master/testeffect.htc);
+}
 
 /* Modal start*/
 .modal {
@@ -2188,7 +2190,9 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .app { background-image: url(var(--wlpimg)) !important; background-size: cover !important; }
 
+/*
 .callout-backdrop { background-color: black !important; background-image: url(var(--wlpimg)) !important; -webkit-transition: 0.3s all ease; -o-transition: 0.3s all ease; -moz-transition: 0.3s all ease; transition: 0.3s all ease; background-size: cover !important; -webkit-filter: brightness(75%); }
+*/
 
 .user-popout:before {
     background-image: url(var(--wlpimg)) !important;
