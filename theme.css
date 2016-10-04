@@ -1,6 +1,3 @@
-.app {
-	behavior:url(https://rawgit.com/Aesir123/Theme/master/testeffect.htc);
-}
 
 /* Modal start*/
 .modal {
@@ -2131,9 +2128,6 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 #user-profile-modal .tab-bar-container .tab-bar-item + .tab-bar-item{margin: 0;}
 
-#user-profile-modal .scroller-wrap{height: 380px;}
-
-#user-profile-modal .scroller-wrap .scroller{margin-top: 60px;animation: sw-fade 300ms ease-in-out;}
 
 @keyframes sw-fade {
 	0% {opacity: 0;}
@@ -2168,7 +2162,6 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 #user-profile-modal footer .btn.add-friend{transition: background 500ms;}
 
-#user-profile-modal .scroller-wrap .scroller::-webkit-scrollbar{width:0px;}
 
 .theme-dark #friends .friends-header .tab-bar .tab-bar-item.tab-bar-item-primary .badge {background-color: #f04747;color: #fff;}
 
@@ -2182,32 +2175,17 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .activity strong { color: var(--main-color); }
 
-/*.member:hover { background-color: rgba(255, 255, 255, 0.50); }*/
 .message-text/* .member*/ {-webkit-transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); }
 .message-text:hover {background-color: rgba(255, 255, 255, 0.15); border-radius: 3px; }
 
 
+.scroller-wrap .scroller::-webkit-scrollbar-thumb {
+	border:3px solid rgba(57, 57, 59, 1) !important;
+	background-color:#19191b !important;
+}
 
-.app { background-image: url(var(--wlpimg)) !important; background-size: cover !important; }
-
-/*
-.callout-backdrop { background-color: black !important; background-image: url(var(--wlpimg)) !important; -webkit-transition: 0.3s all ease; -o-transition: 0.3s all ease; -moz-transition: 0.3s all ease; transition: 0.3s all ease; background-size: cover !important; -webkit-filter: brightness(75%); }
-*/
-
-.user-popout:before {
-    background-image: url(var(--wlpimg)) !important;
-    content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);}
-
-#user-profile-modal .header:before {
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url(var(--wlpimg)) !important;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url(var(--wlpimg)) !important;
-    content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);}
-
-:root { 
- --main-color: #057F95;
- --hover-color: #045B6B;
- --wlpimg: "https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png";
- }
-
-
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+	border:3px solid rgba(255,255,255,0) !important;
+	background-color:#19191b !important;
+}
 
