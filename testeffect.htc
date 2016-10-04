@@ -4,6 +4,7 @@
 <SCRIPT>
    function main() 
    {
+   alert("c:");
 				$(".app").append("<canvas></canvas>");
 	
 	/*
