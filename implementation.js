@@ -1,8 +1,4 @@
-function main()
-{
-	$(".app").append("<canvas />");
-//	alert("i'm working c:");
-}
+
 
 function loadTheme()
 {
@@ -18,4 +14,11 @@ function loadTheme()
 		link.media = 'all';
 		head.appendChild(link);
 	}
+}
+
+function main()
+{
+	$(".app").append("<canvas />");
+	loadTheme();
+//	alert("i'm working c:");
 }
