@@ -1,4 +1,25 @@
 
+/* After */
+:root { 
+ --main-color: #057F95;
+ --hover-color: #045B6B;
+ }
+ 
+
+.callout-backdrop { background-color: black !important; background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important; -webkit-transition: 0.3s all ease; -o-transition: 0.3s all ease; -moz-transition: 0.3s all ease; transition: 0.3s all ease; background-size: cover !important; -webkit-filter: brightness(75%); }
+
+.user-popout:before {
+    background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
+    content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);}
+
+#user-profile-modal .header:before {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
+    content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);}
+
+
+
+
 canvas {
 	position: absolute;
 	width: 100%;
@@ -2197,24 +2218,5 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	border:3px solid rgba(255,255,255,0) !important;
 	background-color:#19191b !important;
 }
-
-/* After */
-:root { 
- --main-color: #057F95;
- --hover-color: #045B6B;
- }
- 
-
-.callout-backdrop { background-color: black !important; background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important; -webkit-transition: 0.3s all ease; -o-transition: 0.3s all ease; -moz-transition: 0.3s all ease; transition: 0.3s all ease; background-size: cover !important; -webkit-filter: brightness(75%); }
-
-.user-popout:before {
-    background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);}
-
-#user-profile-modal .header:before {
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);}
-
 
 
