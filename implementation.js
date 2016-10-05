@@ -18,7 +18,7 @@ function loadTheme()
 
 function main()
 {
-//	$(".app").append("<canvas />");
-	loadTheme();
+	$(".app").append("<canvas />");
+//	loadTheme();
 //	alert("i'm working c:");
 }
