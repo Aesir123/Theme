@@ -33,6 +33,7 @@ function applyEmoticons()
 	
 	for(var i = 0; i < emoticons.length; i++)
 		emoticons[i].src = "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/nod_80_anim_gif.gif?width=40&height=40";
+	alert("emoticons applied!");
 }
 
 function main()
