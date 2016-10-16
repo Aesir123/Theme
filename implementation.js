@@ -41,16 +41,22 @@ function applyEmoticon(name, url)
 {
 	
 	var emoticons = getImagesByAlt(":" + name + ":");
+	var x = 0;
 	
 	for(var i = 0; i < emoticons.length; i++)
+	{
 		emoticons[i].src = url;
+		x++;
+	}
+	
+	return x;
 }
 
 function applyEmoticons()
 {
 	for(var i = 0; i < emojiList.length; i++)
 	{
-		applyEmoticon(emojiList[i][0], emojiList[i][1]);
+		alert(applyEmoticon(emojiList[i][0], emojiList[i][1]));
 	}
 }
 
