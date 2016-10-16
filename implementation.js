@@ -11,7 +11,7 @@ function loadTheme()
 		link.rel  = 'stylesheet';
 		link.type = 'text/css';
 		link.href = 'https://rawgit.com/Aesir123/Theme/master/theme.css';
-	//	link.media = 'all';
+		link.media = 'all';
 		head.appendChild(link);
 	}
 }
