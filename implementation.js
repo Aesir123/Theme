@@ -60,7 +60,7 @@ function applyEmoticons()
 //		["", ""],
 //		["", ""],
 	];
-	console.log(emojiList);
+	
 	for(var i = 0; i < emojiList.length; i++)
 	{
 		applyEmoticon(emojiList[i][0], emojiList[i][1]);

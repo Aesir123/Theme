@@ -11,7 +11,7 @@
 .user-popout:before {
     background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
     content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);
-	}
+}
 
 #user-profile-modal .header:before {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
