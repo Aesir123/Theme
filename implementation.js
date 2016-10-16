@@ -40,7 +40,7 @@ var emojiList = [
 function applyEmoticon(name, url)
 {
 	
-	var emoticons = getImagesByAlt(":" + url + ":");
+	var emoticons = getImagesByAlt(":" + name + ":");
 	
 	for(var i = 0; i < emoticons.length; i++)
 		emoticons[i].src = url;
