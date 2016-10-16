@@ -27,15 +27,6 @@ function getImagesByAlt(alt) {
     return images;
 }
 
-var emojiList = [
-	["bitch", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/donttalktome_anim.gif"],
-	["nod", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/nod_80_anim_gif.gif?width=40&height=40"],
-	["tauri", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/dull_tauri_80_anim_gif.gif?width=40&height=40"],
-	["morningafter", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/hungover_40_anim_gif.gif"],
-	["hug", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/hug_80_anim_gif.gif?width=40&height=40"],
-	["doh", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/doh_80_anim_gif.gif?width=40&height=40"],
-	["fail", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/facepalm_80_anim_gif.gif?width=40&height=40"]
-];
 
 function applyEmoticon(name, url)
 {
@@ -54,9 +45,19 @@ function applyEmoticon(name, url)
 
 function applyEmoticons()
 {
+	var emojiList = [
+		["bitch", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/donttalktome_anim.gif"],
+		["nod", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/nod_80_anim_gif.gif?width=40&height=40"],
+		["tauri", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/dull_tauri_80_anim_gif.gif?width=40&height=40"],
+		["morningafter", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/hungover_40_anim_gif.gif"],
+		["hug", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/hug_80_anim_gif.gif?width=40&height=40"],
+		["doh", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/doh_80_anim_gif.gif?width=40&height=40"],
+		["fail", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/facepalm_80_anim_gif.gif?width=40&height=40"]
+	];
+
 	for(var i = 0; i < emojiList.length; i++)
 	{
-		alert(applyEmoticon(emojiList[i][0], emojiList[i][1]));
+		applyEmoticon(emojiList[i][0], emojiList[i][1]);
 	}
 }
 
