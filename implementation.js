@@ -69,7 +69,7 @@ function applyEmoticons()
 
 function main()
 {
-//	$(".app").append("<canvas />");
+	$(".app").append("<canvas />");
 //	alert("i'm working c:");
 	applyEmoticons();
 }
