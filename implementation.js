@@ -55,7 +55,7 @@ function applyEmoticons()
 		["fail", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/facepalm_80_anim_gif.gif?width=40&height=40"],
 		["what", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/wondering_80_anim_gif.gif?width=40&height=40"],
 		["fuckyou", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/fuckyou.gif"],
-//		["", ""],
+		["rofl", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/rofl_80_anim_gif.gif?width=40&height=40"],
 //		["", ""],
 //		["", ""],
 //		["", ""],
