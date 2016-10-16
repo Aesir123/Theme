@@ -52,7 +52,13 @@ function applyEmoticons()
 		["morningafter", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/hungover_40_anim_gif.gif"],
 		["hug", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/hug_80_anim_gif.gif?width=40&height=40"],
 		["doh", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/doh_80_anim_gif.gif?width=40&height=40"],
-		["fail", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/facepalm_80_anim_gif.gif?width=40&height=40"]
+		["fail", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/facepalm_80_anim_gif.gif?width=40&height=40"],
+		["what", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/wondering_80_anim_gif.gif?width=40&height=40"],
+		["fuckyou", "http://i.imgur.com/jzUSjyN.gif"],
+//		["", ""],
+//		["", ""],
+//		["", ""],
+//		["", ""],
 	];
 	console.log(emojiList);
 	for(var i = 0; i < emojiList.length; i++)
