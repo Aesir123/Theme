@@ -54,7 +54,7 @@ function applyEmoticons()
 		["doh", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/doh_80_anim_gif.gif?width=40&height=40"],
 		["fail", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/facepalm_80_anim_gif.gif?width=40&height=40"]
 	];
-
+	console.log(emojiList);
 	for(var i = 0; i < emojiList.length; i++)
 	{
 		applyEmoticon(emojiList[i][0], emojiList[i][1]);
