@@ -70,7 +70,7 @@ function applyEmoticons()
 function main()
 {
 	$(".app").append("<canvas />");
-//	loadTheme();
+	loadTheme();
 //	alert("i'm working c:");
 	applyEmoticons();
 }
