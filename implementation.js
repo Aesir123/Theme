@@ -28,12 +28,12 @@ function getImagesByAlt(alt) {
 }
 
 var emojiList = [
+	["bitch", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/donttalktome_anim.gif"],
 	["nod", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/nod_80_anim_gif.gif?width=40&height=40"],
 	["tauri", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/dull_tauri_80_anim_gif.gif?width=40&height=40"],
 	["morningafter", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/hungover_40_anim_gif.gif"],
 	["hug", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/hug_80_anim_gif.gif?width=40&height=40"],
 	["doh", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/doh_80_anim_gif.gif?width=40&height=40"],
-	["bitch", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/donttalktome_anim.gif"],
 	["fail", "https://az705183.vo.msecnd.net/onlinesupportmedia/onlinesupport/media/skype/screenshots/fa12330/emoticons/facepalm_80_anim_gif.gif?width=40&height=40"]
 ];
 
