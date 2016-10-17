@@ -98,7 +98,7 @@ function readRemoteFile(url)
 
 function pushUpdateNotification()
 {
-	if(document.getElementById('themeUpdateNotice')) continue;
+	if(document.getElementById('themeUpdateNotice')) return;
 	
 	$('.app').append('<div class="notice notice-info" id="themeUpdateNotice"> \
 		<div class="notice-dismiss" onclick="document.getElementById(\'themeUpdateNotice\').remove();"> \
@@ -112,7 +112,7 @@ function checkUpdate()
 	var ver = readRemoteFile(updateFile);
 	var cookieVer = readCookie('ESUpdate');
 	
-	if(ver != document.cookie)
+	if(ver != cookieVer)
 	{
 		createCookie('ESUpdate', ver, 1);
 		pushUpdateNotification();
