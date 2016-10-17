@@ -1,4 +1,6 @@
 // Definitions start
+var localVersionString = "2poi4thwouegfnp<";
+
 var emojiList = [
 		["bitch", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/bitch.gif"],
 		["nod", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/nod.gif"],
@@ -50,24 +52,6 @@ function GetCurrentServerID() {
 	return ID
 }
 
-function writeToFile(path, txt){
-    var fso = new ActiveXObject("Scripting.FileSystemObject");
-    var fh = fso.OpenTextFile(path, 8, false, 0);
-    fh.WriteLine(txt);
-    fh.Close();
-}
-
-function readFile(path){
-    var fso = new ActiveXObject("Scripting.FileSystemObject");
-    var fh = fso.OpenTextFile(path, 1, false, 0);
-    var lines = "";
-    while (!fh.AtEndOfStream) {
-        lines += fh.ReadLine() + "\r";
-    }
-    fh.Close();
-    return lines[0];
-}
-
 function readRemoteFile(url)
 {
 	var txtFile = new XMLHttpRequest();
@@ -85,11 +69,9 @@ function readRemoteFile(url)
 function checkUpdate()
 {
 	var ver = readRemoteFile(updateFile);
-	var localVer = readFile(dir + localUpdateFile);
 	
-	if(ver != localVer)
+	if(ver != localVersionString)
 	{
-		writeToFile(dir + localUpdateFile, ver);
 		location.reload(true);
 	}
 }
