@@ -21,7 +21,7 @@ function unloadTheme()
 	var cssId = 'ESThemeImplementation';
 	var doc = document.getElementById(cssId);
 	if(!doc) alert("ESIntegrationThemeErr: couldn't find some important shit that i needed, go blame kasistar!");
-	else doc.remove();
+	else doc.parentNode.removeChild(element);
 }
 
 function getImagesByAlt(alt) {
