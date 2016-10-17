@@ -1286,7 +1286,7 @@ span.replyer { border-radius: 3px; transition: .3s ease-in-out all; }
 
 .channel-textarea-inner textarea { color: #ABABAB; }
 
-.staff-channel-name { color: #FFCFFF !important; }
+.staff-channel-name { color: #00FFFF !important; }
 
 .chat > .title-wrap > .title .channel-name { color: #BFBFBF; /*text-transform: capitalize;*/ }
 
