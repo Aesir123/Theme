@@ -16,6 +16,14 @@ function loadTheme()
 	}
 }
 
+function unloadTheme()
+{
+	var cssId = 'ESThemeImplementation';
+	var doc = document.getElementById(cssId);
+	if(!doc) alert("ESIntegrationThemeErr: couldn't find some important shit that i needed, go blame kasistar!");
+	else doc.remove();
+}
+
 function getImagesByAlt(alt) {
     var allImages = document.getElementsByTagName("img");
     var images = [];
@@ -73,6 +81,14 @@ function main()
 //	loadTheme();
 //	alert("i'm working c:");
 	applyEmoticons();
+}
+
+
+esIntegration.prototype.unload = function() {
+	unloadTheme();
+}
+esIntegration.prototype.stop = function() {
+	unloadTheme();
 }
 
 esIntegration.prototype.onMessage = function() { 
