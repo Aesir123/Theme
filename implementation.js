@@ -67,13 +67,13 @@ function readRemoteFile(url)
 
 function checkUpdate()
 {
-	var ver = readRemoteFile(updateFile);
+/*	var ver = readRemoteFile(updateFile);
 	
 	if(ver != document.cookie)
 	{
 		document.cookie = ver;
 		location.reload();
-	}
+	}*/
 }
 
 function loadTheme()
