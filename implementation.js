@@ -124,8 +124,8 @@ function replaceStaffChannelsColor()
 		{
 			if(chans[i].innerHTML == staffChanNames[x])
 			{
-				if(element.className.indexOf(staffChanClass) == -1)
-					element.className += (" " + staffChanClass);
+				if(chans[i].className.indexOf(staffChanClass) == -1)
+					chans[i].className += (" " + staffChanClass);
 				
 				break;
 			}
