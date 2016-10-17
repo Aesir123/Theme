@@ -43,6 +43,33 @@ function writeLogLine(text, tag)
 }
 // Logging end
 
+// Cookie management start
+function createCookie(name,value,days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+    }
+    else var expires = "";
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name,"",-1);
+}
+// Cookie management end
+
 function GetCurrentServerID() {
 	var ID = 0
 
@@ -68,15 +95,11 @@ function readRemoteFile(url)
 	txtFile.send(null);
 }
 
-function popUpdateNotification()
-{
-	document.getElementById('themeUpdateNotice').remove();
-}
 
 function pushUpdateNotification()
 {
 	$('.app').append('<div class="notice notice-info" id="themeUpdateNotice"> \
-		<div class="notice-dismiss" onclick="popUpdateNotification()"> \
+		<div class="notice-dismiss" onclick="document.getElementById(\'themeUpdateNotice\').remove();"> \
 		</div> \
 		<strong>ES Theme</strong>\'s automated update system found a new version!<a class="btn" onclick="location.reload();" style="cursor:pointer">Install It!</a> \
 		</div>');
@@ -84,13 +107,14 @@ function pushUpdateNotification()
 
 function checkUpdate()
 {
-/*	var ver = readRemoteFile(updateFile);
+	var ver = readRemoteFile(updateFile);
+	var cookieVer = readCookie('ESUpdate');
 	
 	if(ver != document.cookie)
 	{
-		document.cookie = ver;
-		location.reload();
-	}*/
+		createCookie('ESUpdate', ver, 7);
+		pushUpdateNotification();
+	}
 }
 
 function loadTheme()
