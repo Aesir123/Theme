@@ -131,7 +131,7 @@ function replaceStaffChannelsColor()
 		
 		for(var x = 0; x < staffChanNames.length; x++)
 		{
-			if(chans[i].innerHTML == staffChanNames[x])
+			if(chans[i].innerHTML.indexOf(staffChanNames[x]))
 			{
 				applyStaffChannelColor(chans[i]);
 				break;
