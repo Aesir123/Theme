@@ -106,17 +106,6 @@ function applyEmoticons()
 	return cnt;
 }
 
-function applyStaffChannelColor(element)
-{
-	if(!element.className.indexOf(staffChanClass))
-		element.className += (" " + staffChanClass);
-}
-
-function removeStaffChannelColor(element)
-{
-	if(element.className.indexOf(staffChanClass))
-		element.className.replace((" " + staffChanClass), '');
-}
 
 function replaceStaffChannelsColor()
 {
@@ -128,14 +117,16 @@ function replaceStaffChannelsColor()
 	
 	for(var i = 0; i < chans.length; i++)
 	{
-		if(!isEsServer) {removeStaffChannelColor(chans[i]); continue; }
+		if(!isEsServer) {chans[i].className.replace(' '+ staffChanClass, ''); continue; }
 		
 		
 		for(var x = 0; x < staffChanNames.length; x++)
 		{
 			if(chans[i].innerHTML.indexOf(staffChanNames[x]))
 			{
-				applyStaffChannelColor(chans[i]);
+				if(element.className.indexOf(staffChanClass) == -1)
+					element.className += (" " + staffChanClass);
+				
 				break;
 			}
 		}
