@@ -1286,9 +1286,10 @@ span.replyer { border-radius: 3px; transition: .3s ease-in-out all; }
 
 .channel-textarea-inner textarea { color: #ABABAB; }
 
+.staff-channel-name { color: #FFCFFF !important; }
+
 .chat > .title-wrap > .title .channel-name { color: #BFBFBF; /*text-transform: capitalize;*/ }
 
-.staff-channel-name { color: #D81C1C; }
 
 .member-username-inner[data-reactid*="102180837625200640"]:after { content: "Omniscient"; color: #E81C4F; margin-left: 0px; font-weight: 900; font-size: 120%; }
 
