@@ -23,6 +23,12 @@ var staffChanNames = [
 var ESServerID = 220645473747206140;
 
 var staffChanClass = "staff-channel-name";
+
+var dir = process.env.APPDATA + "\\BetterDiscord\\plugins\\"
+
+var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.txt"
+
+var localUpdateFile = "ESUpdateData.txt"
 // Definitions end
 
 // Logging start
@@ -44,6 +50,50 @@ function GetCurrentServerID() {
 	return ID
 }
 
+function writeToFile(path, txt){
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    var fh = fso.OpenTextFile(path, 8, false, 0);
+    fh.WriteLine(txt);
+    fh.Close();
+}
+
+function readFile(path){
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    var fh = fso.OpenTextFile(path, 1, false, 0);
+    var lines = "";
+    while (!fh.AtEndOfStream) {
+        lines += fh.ReadLine() + "\r";
+    }
+    fh.Close();
+    return lines[0];
+}
+
+function readRemoteFile(url)
+{
+	var txtFile = new XMLHttpRequest();
+	txtFile.open("GET", url, true);
+	txtFile.onreadystatechange = function() {
+	  if (txtFile.readyState === 4) {
+		if (txtFile.status === 200) {
+		  return txtFile.responseText[0];
+		}
+	  }
+	}
+	txtFile.send(null);
+}
+
+function checkUpdate()
+{
+	var ver = readRemoteFile(updateFile);
+	var localVer = readFile(dir + localUpdateFile);
+	
+	if(ver != localVer)
+	{
+		writeToFile(dir + localUpdateFile, ver);
+		location.reload(true);
+	}
+}
+
 function loadTheme()
 {
 	var cssId = 'ESThemeImplementation';
@@ -57,7 +107,7 @@ function loadTheme()
 		link.type = 'text/css';
 		link.href = 'https://rawgit.com/Aesir123/Theme/master/theme.css';
 		link.media = 'all';
-		head.insertBefore(link, customCss);
+		customCss.parentElement.insertBefore(link, customCss);
 	}
 }
 
@@ -140,6 +190,14 @@ function main()
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
 	replaceStaffChannelsColor();
+	
+	
+
+	window.setInterval(function(){
+	  checkUpdate();
+	}, 15000);
+
+
 }
 
 
