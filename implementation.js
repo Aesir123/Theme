@@ -20,7 +20,7 @@ var staffChanNames = [
 		"headquarters"
 	];
 	
-var ESServerID = 220645473747206140-2;
+var ESServerID = 220645473747206138;
 
 var staffChanClass = "staff-channel-name";
 // Definitions end
