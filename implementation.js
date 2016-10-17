@@ -1,5 +1,4 @@
 // Definitions start
-var localVersionString = "2poi4thwouegfnp<";
 
 var emojiList = [
 		["bitch", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/bitch.gif"],
@@ -70,8 +69,9 @@ function checkUpdate()
 {
 	var ver = readRemoteFile(updateFile);
 	
-	if(ver != localVersionString)
+	if(ver != document.cookie)
 	{
+		document.cookie = ver;
 		location.reload(true);
 	}
 }
