@@ -1,3 +1,52 @@
+/*
+THATS A BIG ASS COMMENT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SOOOOOOOOOOOOOO BIG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SOOOOOOOOOOOOOOOOOOOOOOOOOOOO BIG
+*/
+
+
 // Definitions start
 
 var emojiList = [
