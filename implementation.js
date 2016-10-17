@@ -72,7 +72,7 @@ function checkUpdate()
 	if(ver != document.cookie)
 	{
 		document.cookie = ver;
-		location.reload(true);
+		location.reload();
 	}
 }
 
