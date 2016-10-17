@@ -893,7 +893,7 @@ a:link { color: var(--main-color); }
 @keyframes color_change { from { border-color: #535559; }
   to { border-color: green; } }
 
-.channel-members h2 { color: var(--main-color) !important; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: bold; padding: 4px 58px; background-color: rgba(0, 0, 0, 0.48); border: 1px solid; border-color: transparent; border-radius: 3px; width: 90px; margin-left: 15px; text-align: center; }
+.channel-members h2 { color: var(--main-color) !important; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: bold; padding: 4px 15px; background-color: rgba(0, 0, 0, 0.48); border: 1px solid; border-color: transparent; border-radius: 3px; width: 180px; margin-left: 15px; text-align: center; }
 
 .private-channels .search-result.selected:before, .private-channels .search-result:hover:before { border-left: 4px solid var(--hover-color); }
 
@@ -2218,9 +2218,38 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	background-color:#19191b !important;
 }
 
+
 .scroller-wrap .scroller::-webkit-scrollbar-track-piece {
 	border:3px solid rgba(255,255,255,0) !important;
 	background-color:#19191b !important;
 }
 
+
+/* priit's modifications start */
+.channel-members h2 {
+    padding: 4px 15px;
+    width: 180px;
+}
+.channel-members .member+h2 {
+    margin-top: 15px;
+}
+.user-popout {
+    background: rgb(32, 80, 112) !important;
+}
+.scroller-wrap .scroller::-webkit-scrollbar-thumb {
+    border:1px solid rgba(255, 0, 0, 0) !important;
+    background-color:#205070 !important;
+}
+.status-invisible, .status-offline {
+    background-color: #999999;
+}
+.avatar-small .status {
+    width: 8px;
+    height: 8px;
+    border-radius: 0px;
+}
+.user-popout .avatar-wrapper .avatar-popout .status {
+    border-radius: 1px;
+}
+/* priit's modifications end */
 
