@@ -2,7 +2,7 @@
 
 function loadTheme()
 {
-	var cssId = 'ESThemeImplementation';  // you could encode the css path itself to generate id..
+	var cssId = 'ESThemeImplementation';
 	if (!document.getElementById(cssId))
 	{
 		var head  = document.getElementsByTagName('head')[0];
@@ -18,10 +18,7 @@ function loadTheme()
 
 function unloadTheme()
 {
-	var cssId = 'ESThemeImplementation';
-	var doc = document.getElementById(cssId);
-	if(!doc) alert("ESIntegrationThemeErr: couldn't find some important shit that i needed, go blame kasistar!");
-	else doc.parentNode.removeChild(element);
+	$('#ESThemeImplementation').remove();
 }
 
 function getImagesByAlt(alt) {
