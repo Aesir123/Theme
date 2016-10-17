@@ -1,5 +1,13 @@
 
 
+// Logging start
+function writeLogLine(text, tag)
+{
+	var line = "[ESTheme][" + tag + "] - " + text;
+	console.log(line);
+}
+// Logging end
+
 function loadTheme()
 {
 	var cssId = 'ESThemeImplementation';
@@ -66,20 +74,31 @@ function applyEmoticons()
 //		["", ""],
 	];
 	
+	var cnt = 0;
+	
 	for(var i = 0; i < emojiList.length; i++)
 	{
-		applyEmoticon(emojiList[i][0], emojiList[i][1]);
+		cnt += applyEmoticon(emojiList[i][0], emojiList[i][1]);
 	}
+	
+	return cnt;
 }
 
 function main()
 {
-//	$(".app").append("<canvas />");
-//	loadTheme();
-//	alert("i'm working c:");
-	applyEmoticons();
+	var rtn = applyEmoticons();
+	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
 }
 
+
+esIntegration.prototype.onSwitch = function() {}
+esIntegration.prototype.load = function() {}
+
+
+esIntegration.prototype.observer = function () {}
+esIntegration.prototype.getSettingsPanel = function () {
+	return ""
+}
 
 esIntegration.prototype.unload = function() {
 	unloadTheme();
@@ -89,5 +108,6 @@ esIntegration.prototype.stop = function() {
 }
 
 esIntegration.prototype.onMessage = function() { 
-	applyEmoticons();
+	var rtn = applyEmoticons();
+	writeLogLine("Message replace finished! Replace count: " + rtn, "SkypeEmotes");
 }
