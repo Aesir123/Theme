@@ -49,6 +49,7 @@ function loadTheme()
 	var cssId = 'ESThemeImplementation';
 	if (!document.getElementById(cssId))
 	{
+		var customCss = document.getElementById('customcss');
 		var head  = document.getElementsByTagName('head')[0];
 		var link  = document.createElement('link');
 		link.id   = cssId;
@@ -56,7 +57,7 @@ function loadTheme()
 		link.type = 'text/css';
 		link.href = 'https://rawgit.com/Aesir123/Theme/master/theme.css';
 		link.media = 'all';
-		head.appendChild(link);
+		head.insertBefore(link, customCss);
 	}
 }
 
