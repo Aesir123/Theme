@@ -20,7 +20,7 @@ var staffChanNames = [
 		"headquarters"
 	];
 	
-var ESServerID = 220645473747206145;
+var ESServerID = 220645473747206140;
 
 var staffChanClass = "staff-channel-name";
 // Definitions end
@@ -124,7 +124,7 @@ function replaceStaffChannelsColor()
 	
 	var isEsServer = (GetCurrentServerID == ESServerID);
 	
-	if(!isEsServer) writeLogLine("This is not ES Server! Removing channels customizations...");
+	if(!isEsServer) writeLogLine("This is not ES Server! Removing channels customizations...", "Theme");
 	
 	for(var i = 0; i < chans.length; i++)
 	{
