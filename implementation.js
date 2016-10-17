@@ -1,50 +1,4 @@
-/*
-THATS A BIG ASS COMMENT
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SOOOOOOOOOOOOOO BIG
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SOOOOOOOOOOOOOOOOOOOOOOOOOOOO BIG
-*/
 
 
 // Definitions start
@@ -112,6 +66,20 @@ function readRemoteFile(url)
 	  }
 	}
 	txtFile.send(null);
+}
+
+function popUpdateNotification()
+{
+	document.getElementById('themeUpdateNotice').remove();
+}
+
+function pushUpdateNotification()
+{
+	$('.app').append('<div class="notice notice-info" id="themeUpdateNotice"> \
+		<div class="notice-dismiss" onclick="popUpdateNotification()"> \
+		</div> \
+		<strong>ES Theme</strong>\'s automated update system found a new version!<a class="btn" onclick="location.reload();" style="cursor:pointer">Install It!</a> \
+		</div>');
 }
 
 function checkUpdate()
