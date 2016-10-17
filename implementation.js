@@ -122,7 +122,8 @@ function replaceStaffChannelsColor()
 		
 		for(var x = 0; x < staffChanNames.length; x++)
 		{
-			if(chans[i].innerHTML == staffChanNames[x])
+			if(chans[i].innerHTML == staffChanNames[x]
+				&& chans[i].parentElement.className != 'title')
 			{
 				if(chans[i].className.indexOf(staffChanClass) == -1)
 					chans[i].className += (" " + staffChanClass);
