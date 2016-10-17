@@ -124,6 +124,8 @@ function replaceStaffChannelsColor()
 	
 	var isEsServer = (GetCurrentServerID == ESServerID);
 	
+	if(!isEsServer) writeLogLine("This is not ES Server! Removing channels customizations...");
+	
 	for(var i = 0; i < chans.length; i++)
 	{
 		if(!isEsServer) {removeStaffChannelColor(chans[i]); continue; }
