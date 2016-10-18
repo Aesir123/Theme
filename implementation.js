@@ -119,7 +119,7 @@ function GetCurrentServerID() {
 
 function makeUpdate(ver)
 {
-	 createCookie('ESUpdateCookie', ver, 1);
+	 createCookie('ESUpdate', ver, 1);
 	 location.reload();
 }
 
@@ -146,11 +146,11 @@ function setOwnerToolTip()
 	
 	if(!ownerElement) return;
 	
-	ownerElement = ownerElement.parentElement.parentElement;
+	ownerElement = ownerElement.parentElement.parentElement.parentElement;
 	
 	ownerElement.onmouseover = 
      function() { 
-         pushOwnerToolTip(this.getBoundingClientRect());
+         pushOwnerToolTip(ownerElement.getBoundingClientRect());
      };
 	 
 	 ownerElement.onmouseout = 
@@ -162,7 +162,7 @@ function setOwnerToolTip()
 
 function pushOwnerToolTip(position)
 {
-	pushToolTip('owner-tooltip', position.left, position.top, top, "This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs it so much! :(");
+	pushToolTip('owner-tooltip', position.left, position.top, top, "This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(");
 }
 
 function pushToolTip(id, x, y, type, content)
@@ -184,7 +184,7 @@ function checkUpdate()
 	  if (txtFile.readyState === 4) {
 		if (txtFile.status === 200) {
 		  var ver = parseInt(txtFile.responseText);
-		  var cookieVer = readCookie('ESUpdateCookie');
+		  var cookieVer = readCookie('ESUpdate');
 	
 			if(!cookieVer || ver > parseInt(cookieVer))
 			{
