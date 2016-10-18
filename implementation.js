@@ -81,20 +81,22 @@ function GetCurrentServerID() {
 	return ID
 }
 
-function readRemoteFile(url)
+function makeUpdate(ver)
 {
-	
+	 createCookie('ESUpdate', ver, 1);
+	 location.reload();
 }
 
 
-function pushUpdateNotification()
+function pushUpdateNotification(currVer, newVer)
 {
 	if(document.getElementById('themeUpdateNotice')) return;
 	
 	$('.app').append('<div class="notice notice-info" id="themeUpdateNotice"> \
-		<div class="notice-dismiss" onclick="document.getElementById(\'themeUpdateNotice\').remove(); createCookie(\'ESUpdate\', ver, 1);"> \
+		<div class="notice-dismiss" onclick="document.getElementById(\'themeUpdateNotice\').remove();"> \
 		</div> \
-		<strong>ES Theme</strong>\'s automated update system found a new version!<a class="btn" onclick="location.reload(); createCookie(\'ESUpdate\', ver, 1);" style="cursor:pointer">Install It!</a> \
+		<strong>ES Theme</strong>\'s automated update system found a new version! | Current Version: ' + currVer + ' | Remote Version: ' + newVer + ' | \
+		<a class="btn" onclick="makeUpdate(' + newVer + ')" style="cursor:pointer">Install It!</a> \
 		</div>');
 }
 
@@ -106,10 +108,10 @@ function checkUpdate()
 	txtFile.onreadystatechange = function() {
 	  if (txtFile.readyState === 4) {
 		if (txtFile.status === 200) {
-		  var ver = txtFile.responseText;
-		  var cookieVer = readCookie('ESUpdate');
+		  var ver = parseInt(txtFile.responseText);
+		  var cookieVer = parseInt(readCookie('ESUpdate'));
 	
-			if(ver != cookieVer)
+			if(ver > cookieVer)
 			{
 				pushUpdateNotification();
 			}
