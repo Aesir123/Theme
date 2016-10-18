@@ -155,7 +155,7 @@ function setOwnerToolTip()
 	 
 	 ownerElement.onmouseout = 
 	 function() {
-		if(document.getElementById('owner-tooltip')) $('.owner-tooltip').remove(); 
+		if(document.getElementById('owner-tooltip')) $('#owner-tooltip').remove(); 
 	 };
 	
 }
@@ -308,7 +308,7 @@ function main()
 
 esIntegration.prototype.onSwitch = function() {
 	replaceStaffChannelsColor();
-	if(document.getElementById('owner-tooltip')) $('.owner-tooltip').remove();
+	if(document.getElementById('owner-tooltip')) $('#owner-tooltip').remove();
 	if(GetCurrentServerID() == ESServerID) setOwnerToolTip();
 	
 }
