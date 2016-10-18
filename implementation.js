@@ -67,6 +67,8 @@ var dir = process.env.APPDATA + "\\BetterDiscord\\plugins\\"
 var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.txt"
 
 var localUpdateFile = "ESUpdateData.txt"
+
+var owner = 'Aesir' // Who else?
 // Definitions end
 
 // Logging start
@@ -132,6 +134,45 @@ function pushUpdateNotification(currVer, newVer)
 		<strong>ES Theme</strong>\'s automated update system found a new version! | Current Version: ' + currVer + ' | Remote Version: ' + newVer + ' | \
 		<a class="btn" onclick="makeUpdate(' + newVer + ')" style="cursor:pointer">Install It!</a> \
 		</div>');
+}
+
+function setOwnerToolTip()
+{
+	var members = document.getElementsByClassName('member-username-inner');
+	var ownerElement = 0;
+	
+	for(var i = 0; i < members.length; i++)
+		if(members[i].innerHTML == owner) { ownerElement = members[i]; break;} 
+	
+	if(!ownerElement) return;
+	
+	ownerElement = ownerElement.parentElement.parentElement.parentElement;
+	
+	ownerElement.onmouseover = 
+     function() { 
+         pushOwnerToolTip(ownerElement.position);
+     };
+	 
+	 ownerElement.onmouseout = 
+	 function() {
+		if(document.getElementById('owner-tooltip')) $('.owner-tooltip').remove(); 
+	 };
+	
+}
+
+function pushOwnerToolTip(position)
+{
+	pushToolTip(id, position.left, position.top, top, "testShit, don't ask yourself what this is, rather go blame Kasistar.");
+}
+
+function pushToolTip(id, x, y, type, content)
+{
+	if(document.getElementById('id')) $('.' + id).remove();
+	
+	var toolTips = document.getElementsByClassName('tooltips')[0];
+	var toolTipHTML = '<div class="tooltip tooltip-' + type + ' tooltip-normal" style="left: '+x+'; top: '+y+'>"' + content + '</div>';
+	toolTips.append(toolTipHTML);
+	
 }
 
 function checkUpdate()
@@ -267,6 +308,9 @@ function main()
 
 esIntegration.prototype.onSwitch = function() {
 	replaceStaffChannelsColor();
+	if(document.getElementById('owner-tooltip')) $('.owner-tooltip').remove();
+	if(GetCurrentServerID() == ESServerID) setOwnerToolTip();
+	
 }
 esIntegration.prototype.load = function() {}
 
