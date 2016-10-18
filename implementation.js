@@ -72,7 +72,7 @@ var owners = ['Aesir', 'Arch']; // Who else?
 
 var ownersTooltips = [
 	"This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(", // Aesir
-	"" // Priit
+	"I'm a potato : l Modified the theme to look nicer." // Priit
 ];
 // Definitions end
 
