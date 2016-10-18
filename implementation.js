@@ -128,17 +128,33 @@ function makeUpdate(ver)
 	 location.reload();
 }
 
+function updateTimer(ver)
+{
+	var element = document.getElementById('updateTimerElement');
+	var leftTime = 10;
+	var updateVer = ver;
+	setInterval(function () {
+			
+			leftTime--;
+			if(leftTime <= 0)
+				makeUpdate(updateVer);
+			
+			element.text = leftTime;
+        }
+    }, 1000);
+}
 
 function pushUpdateNotification(currVer, newVer)
 {
 	if(document.getElementById('themeUpdateNotice')) return;
 	
 	$('.app').append('<div class="notice notice-info" id="themeUpdateNotice"> \
-		<div class="notice-dismiss" onclick="document.getElementById(\'themeUpdateNotice\').remove();"> \
-		</div> \
-		<strong>ES Theme</strong>\'s automated update system found a new version! | Current Version: ' + currVer + ' | Remote Version: ' + newVer + ' | \
-		<a class="btn" onclick="makeUpdate(' + newVer + ')" style="cursor:pointer">Install It!</a> \
+		<strong>ES Theme</strong>\'s automated update system found a new version! \
+		<strong><span id="updateTimerElement">N/A</span></strong> seconds left until install! \
+		| Current Version: ' + currVer + ' | Remote Version: ' + newVer + ' | \
 		</div>');
+		
+	updateTimer(newVer);
 }
 
 function setOwnerToolTip()
