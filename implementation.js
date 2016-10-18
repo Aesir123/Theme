@@ -109,9 +109,9 @@ function checkUpdate()
 	  if (txtFile.readyState === 4) {
 		if (txtFile.status === 200) {
 		  var ver = parseInt(txtFile.responseText);
-		  var cookieVer = parseInt(readCookie('ESUpdate'));
+		  var cookieVer = readCookie('ESUpdate');
 	
-			if(ver > cookieVer)
+			if(!cookieVer || ver > parseInt(cookieVer))
 			{
 				pushUpdateNotification();
 			}
