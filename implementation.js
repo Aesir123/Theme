@@ -140,7 +140,6 @@ function updateTimer(ver)
 				makeUpdate(updateVer);
 			
 			element.text = leftTime;
-        }
     }, 1000);
 }
 
