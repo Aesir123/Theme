@@ -119,7 +119,7 @@ function GetCurrentServerID() {
 
 function makeUpdate(ver)
 {
-	 createCookie('ESUpdate', ver, 1);
+	 createCookie('ESUpdateCookie', ver, 1);
 	 location.reload();
 }
 
@@ -184,7 +184,7 @@ function checkUpdate()
 	  if (txtFile.readyState === 4) {
 		if (txtFile.status === 200) {
 		  var ver = parseInt(txtFile.responseText);
-		  var cookieVer = readCookie('ESUpdate');
+		  var cookieVer = readCookie('ESUpdateCookie');
 	
 			if(!cookieVer || ver > parseInt(cookieVer))
 			{
