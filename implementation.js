@@ -130,7 +130,7 @@ function makeUpdate(ver)
 
 function updateTimer(ver)
 {
-	var element = document.getElementById('updateTimerElement');
+	var elementX = document.getElementById('updateTimerElement');
 	var leftTime = 10;
 	var updateVer = ver;
 	setInterval(function () {
@@ -139,7 +139,7 @@ function updateTimer(ver)
 			if(leftTime <= 0)
 				makeUpdate(updateVer);
 			
-			element.text = leftTime;
+			elementX.text = leftTime;
     }, 1000);
 }
 
