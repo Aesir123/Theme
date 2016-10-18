@@ -147,7 +147,7 @@ function checkUpdate()
 	
 			if(!cookieVer || ver > parseInt(cookieVer))
 			{
-				pushUpdateNotification();
+				pushUpdateNotification(cookieVer, newVer);
 			}
 		}
 	  }
