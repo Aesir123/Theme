@@ -148,6 +148,8 @@ function setOwnerToolTip()
 	
 	ownerElement = ownerElement.parentElement.parentElement.parentElement;
 	
+	ownerElement.getElementsByClassName('status')[0].className += " status-owner";
+	
 	ownerElement.onmouseover = 
      function() { 
          pushOwnerToolTip(ownerElement.getBoundingClientRect());
