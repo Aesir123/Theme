@@ -146,11 +146,11 @@ function setOwnerToolTip()
 	
 	if(!ownerElement) return;
 	
-	ownerElement = ownerElement.parentElement.parentElement.parentElement;
+	ownerElement = ownerElement.parentElement.parentElement;
 	
 	ownerElement.onmouseover = 
      function() { 
-         pushOwnerToolTip(ownerElement.getBoundingClientRect());
+         pushOwnerToolTip(this.getBoundingClientRect());
      };
 	 
 	 ownerElement.onmouseout = 
@@ -162,7 +162,7 @@ function setOwnerToolTip()
 
 function pushOwnerToolTip(position)
 {
-	pushToolTip('owner-tooltip', position.left, position.top, top, "testShit, don't ask yourself what this is, rather go blame Kasistar.");
+	pushToolTip('owner-tooltip', position.left, position.top, top, "This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs it so much! :(");
 }
 
 function pushToolTip(id, x, y, type, content)
@@ -170,7 +170,7 @@ function pushToolTip(id, x, y, type, content)
 	if(document.getElementById('id')) $('.' + id).remove();
 	
 	var toolTips = document.getElementsByClassName('tooltips')[0];
-	var toolTipHTML = '<div class="tooltip tooltip-' + type + ' tooltip-normal" style="left: '+x+'; top: '+y+'>"' + content + '</div>';
+	var toolTipHTML = '<div id="' + id + '" class="tooltip tooltip-' + type + ' tooltip-normal" style="left: '+x+'; top: '+y+'">' + content + '</div>';
 	toolTips.innerHTML += toolTipHTML;
 	
 }
@@ -296,6 +296,7 @@ function main()
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
 	replaceStaffChannelsColor();
 	
+	if(GetCurrentServerID() == ESServerID) setOwnerToolTip();
 	
 
 	window.setInterval(function(){
