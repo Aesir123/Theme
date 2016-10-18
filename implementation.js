@@ -106,7 +106,7 @@ function checkUpdate()
 	txtFile.onreadystatechange = function() {
 	  if (txtFile.readyState === 4) {
 		if (txtFile.status === 200) {
-		  var ver = txtFile.responseText[0];
+		  var ver = txtFile.responseText;
 		  var cookieVer = readCookie('ESUpdate');
 	
 			if(ver != cookieVer)
