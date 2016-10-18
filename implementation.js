@@ -159,7 +159,7 @@ function setOwnerToolTip()
 		
 		ownerElement.onmouseover = 
 		 function() { 
-			 pushOwnerToolTip(ownerElement.getBoundingClientRect(), x);
+			 pushOwnerToolTip(this.getBoundingClientRect(), this.getElementsByClassName('member-username-inner')[0].innerHTML == 'Aesir' ? 0 : 1);
 		 };
 		 
 		 ownerElement.onmouseout = 
