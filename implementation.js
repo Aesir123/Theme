@@ -150,7 +150,7 @@ function setOwnerToolTip()
 	
 	ownerElement.onmouseover = 
      function() { 
-         pushOwnerToolTip(ownerElement.position);
+         pushOwnerToolTip(ownerElement.getBoundingClientRect());
      };
 	 
 	 ownerElement.onmouseout = 
@@ -162,7 +162,7 @@ function setOwnerToolTip()
 
 function pushOwnerToolTip(position)
 {
-	pushToolTip(id, position.left, position.top, top, "testShit, don't ask yourself what this is, rather go blame Kasistar.");
+	pushToolTip('owner-tooltip', position.left, position.top, top, "testShit, don't ask yourself what this is, rather go blame Kasistar.");
 }
 
 function pushToolTip(id, x, y, type, content)
@@ -171,7 +171,7 @@ function pushToolTip(id, x, y, type, content)
 	
 	var toolTips = document.getElementsByClassName('tooltips')[0];
 	var toolTipHTML = '<div class="tooltip tooltip-' + type + ' tooltip-normal" style="left: '+x+'; top: '+y+'>"' + content + '</div>';
-	toolTips.append(toolTipHTML);
+	toolTips.innerHTML += toolTipHTML;
 	
 }
 
