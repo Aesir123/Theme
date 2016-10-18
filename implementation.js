@@ -83,16 +83,7 @@ function GetCurrentServerID() {
 
 function readRemoteFile(url)
 {
-	var txtFile = new XMLHttpRequest();
-	txtFile.open("GET", url, true);
-	txtFile.onreadystatechange = function() {
-	  if (txtFile.readyState === 4) {
-		if (txtFile.status === 200) {
-		  return txtFile.responseText[0];
-		}
-	  }
-	}
-	txtFile.send(null);
+	
 }
 
 
@@ -109,14 +100,27 @@ function pushUpdateNotification()
 
 function checkUpdate()
 {
-	var ver = readRemoteFile(updateFile);
-	var cookieVer = readCookie('ESUpdate');
 	
-	if(ver != cookieVer)
-	{
-		createCookie('ESUpdate', ver, 1);
-		pushUpdateNotification();
+	var txtFile = new XMLHttpRequest();
+	txtFile.open("GET", updateFile, true);
+	txtFile.onreadystatechange = function() {
+	  if (txtFile.readyState === 4) {
+		if (txtFile.status === 200) {
+		  var ver = txtFile.responseText[0];
+		  var cookieVer = readCookie('ESUpdate');
+	
+			if(ver != cookieVer)
+			{
+				createCookie('ESUpdate', ver, 1);
+				pushUpdateNotification();
+			}
+		}
+	  }
 	}
+	txtFile.send(null);
+	
+	
+	
 }
 
 function loadTheme()
