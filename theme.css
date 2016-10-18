@@ -1958,7 +1958,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 #friends .friends-table .friends-row .friends-column-status{top: 0;width: 100%;justify-content: center;background-color: rgba(0, 0, 0, 0.2);height: 18px;}
 
-#friends .friends-table .friends-row .friends-column-status .status{width: 8px;height: 8px;}
+#friends .friends-table .friends-row .friends-column-status .status{width: 10px;height: 10px; border-radius: 0px}
 
 #friends .friends-table .friends-row .friends-column-status .status-text{font-size: 12px;line-height: normal;transition: color 300ms;}
 
