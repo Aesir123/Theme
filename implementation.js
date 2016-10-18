@@ -68,7 +68,12 @@ var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.txt"
 
 var localUpdateFile = "ESUpdateData.txt"
 
-var owner = 'Aesir' // Who else?
+var owners = ['Aesir', 'Arch']; // Who else?
+
+var ownersTooltips = [
+	"This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(", // Aesir
+	"" // Priit
+];
 // Definitions end
 
 // Logging start
@@ -138,33 +143,35 @@ function pushUpdateNotification(currVer, newVer)
 
 function setOwnerToolTip()
 {
-	var members = document.getElementsByClassName('member-username-inner');
-	var ownerElement = 0;
-	
-	for(var i = 0; i < members.length; i++)
-		if(members[i].innerHTML == owner) { ownerElement = members[i]; break;} 
-	
-	if(!ownerElement) return;
-	
-	ownerElement = ownerElement.parentElement.parentElement.parentElement;
-	
-	ownerElement.getElementsByClassName('status')[0].className += " status-owner";
-	
-	ownerElement.onmouseover = 
-     function() { 
-         pushOwnerToolTip(ownerElement.getBoundingClientRect());
-     };
-	 
-	 ownerElement.onmouseout = 
-	 function() {
-		if(document.getElementById('owner-tooltip')) $('#owner-tooltip').remove(); 
-	 };
-	
+	for(var x = 0; x < owners.length; x++)
+	{
+		var members = document.getElementsByClassName('member-username-inner');
+		var ownerElement = 0;
+		
+		for(var i = 0; i < members.length; i++)
+			if(members[i].innerHTML == owners[x]) { ownerElement = members[i]; break;} 
+		
+		if(!ownerElement) return;
+		
+		ownerElement = ownerElement.parentElement.parentElement.parentElement;
+		
+		ownerElement.getElementsByClassName('status')[0].className += " status-owner";
+		
+		ownerElement.onmouseover = 
+		 function() { 
+			 pushOwnerToolTip(ownerElement.getBoundingClientRect(), x);
+		 };
+		 
+		 ownerElement.onmouseout = 
+		 function() {
+			if(document.getElementById('owner-tooltip')) $('#owner-tooltip').remove(); 
+		 };
+	}
 }
 
-function pushOwnerToolTip(position)
+function pushOwnerToolTip(position, type)
 {
-	pushToolTip('owner-tooltip', position.left, position.top, top, "This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(");
+	pushToolTip('owner-tooltip', position.left, position.top, top, ownersTooltips[type]);
 }
 
 function pushToolTip(id, x, y, type, content)
