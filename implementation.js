@@ -139,7 +139,7 @@ function updateTimer(ver)
 			if(leftTime <= 0)
 				makeUpdate(updateVer);
 			
-			elementX.text = leftTime;
+			elementX.innerHTML = leftTime;
     }, 1000);
 }
 
