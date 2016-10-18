@@ -186,9 +186,9 @@ function checkUpdate()
 		  var ver = parseInt(txtFile.responseText);
 		  var cookieVer = readCookie('ESUpdate');
 	
-			if(!cookieVer || ver > parseInt(cookieVer))
+			if(ver != parseInt(cookieVer))
 			{
-				pushUpdateNotification(cookieVer, newVer);
+				pushUpdateNotification(cookieVer, ver);
 			}
 		}
 	  }
