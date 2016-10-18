@@ -687,7 +687,7 @@ textarea { background: transparent !important; }
 
 #twitchcord-button { background-size: 24px; background-position: 20px; background-color: transparent; }
 
-.message-group.compact .timestamp { position: relative; top: -4px; }
+/*.message-group.compact .timestamp { position: relative; top: -4px; }*/
 
 .message-group.compact .message .markup .user-name { margin-right: 10px; }
 
