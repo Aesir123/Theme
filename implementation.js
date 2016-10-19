@@ -342,7 +342,7 @@ function main()
 	replaceStaffChannelsColor();
 	
 	if(GetCurrentServerID() == ESServerID) setOwnerToolTip();
-	
+	pushDoubleClickEdit();
 
 	window.setInterval(function(){
 	  checkUpdate();
