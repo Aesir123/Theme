@@ -363,7 +363,7 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 
 #permissions .permission-actions.disabled > div { border: #565963; background: #565963; position: relative; }
 
-.checkbox .checkbox-inner span { background: rgba(0, 0, 0, 0.30); transition: .2s linear all !important; }
+.checkbox .checkbox-inner span { background: rgba(0, 20, 40, 0.70); transition: .2s linear all !important; }
 
 .form .control-group .help-text { color: #B6BBC1; }
 
