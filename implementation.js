@@ -150,7 +150,7 @@ function updateAlert(jsonObj)
 		</div></div> \
 		</span>';
 		
-	$('#app-mount').append(txt);
+	//$('#app-mount').append(txt);
 }
 
 function handleUpdate(txt)
