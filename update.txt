@@ -1,13 +1,13 @@
-{"versionNumber": 13, "author": "Aesir", "animationLink": "/assets/daecc671c8e8789ca5373108aa3d507d.gif", "pluginPatchNotes": [
-			["Subject1": "ExplainedSubject1"],
-			["Subject2": "ExplainedSubject2"],
-			["Subject3": "ExplainedSubject3"],
-			["Subject4": "ExplainedSubject4"],
-			["Subject5": "ExplainedSubject5"]
+{"versionNumber": 13, "author": "Aesir", "animationLink": "/assets/daecc671c8e8789ca5373108aa3d507d.gif", "pluginPatchNotes":  {
+			"Subject1": "ExplainedSubject1",
+			"Subject2": "ExplainedSubject2",
+			"Subject3": "ExplainedSubject3",
+			"Subject4": "ExplainedSubject4",
+			"Subject5": "ExplainedSubject5"
 			
-], "themePatchNotes": [
-			["Subject1": "ExplainedSubject1"],
-			["Subject2": "ExplainedSubject2"],
-			["Subject3": "ExplainedSubject3"],
-			["Subject4": "ExplainedSubject4"],
-			["Subject5": "ExplainedSubject5"]]}
+}, "themePatchNotes": {
+			"Subject1": "ExplainedSubject1",
+			"Subject2": "ExplainedSubject2",
+			"Subject3": "ExplainedSubject3",
+			"Subject4": "ExplainedSubject4",
+			"Subject5": "ExplainedSubject5"}}
