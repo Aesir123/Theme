@@ -143,6 +143,26 @@ function updateTimer(ver)
     }, 1000);
 }
 
+function pushDoubleClickEdit()
+{
+	$(document).on("dblclick.dce", function(e) {
+        var target = $(e.target);
+        if(target.parents(".message").length > 0) {
+            var msg = target.parents(".message").first();
+            var opt = msg.find(".btn-option");
+            opt.click();
+
+            $.each($(".popout .btn-item"), (index, value) => {
+                var option = $(value);
+                if(option.text() === "Edit") {
+                    option.click();
+                }
+            });
+
+        }
+	});
+}
+
 function pushUpdateNotification(currVer, newVer)
 {
 	if(document.getElementById('themeUpdateNotice')) return;
@@ -243,6 +263,7 @@ function loadTheme()
 function unloadTheme()
 {
 	$('#ESThemeImplementation').remove();
+	$(document).off("dblclick.dce");
 }
 
 function getImagesByAlt(alt) {
