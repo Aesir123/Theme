@@ -150,7 +150,7 @@ function updateAlert(jsonObj)
 		</div></div> \
 		</span>';
 		
-	//$('#app-mount').append(txt);
+//	$('#app-mount').append(txt);
 }
 
 function handleUpdate(txt)
@@ -163,7 +163,7 @@ function handleUpdate(txt)
 	
 	if(ver != parseInt(cookieVer))
 	{
-		updateAlert(obj);
+	//	updateAlert(obj);
 	}
 }
 
