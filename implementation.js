@@ -170,7 +170,7 @@ function setOwnerToolTip()
 		
 		ownerElement = ownerElement.parentElement.parentElement.parentElement;
 		
-		ownerElement.getElementsByClassName('status')[0].className += " status-owner";
+		ownerElement.getElementsByClassName('status')[0].style = "background-color: #00FFFF !important;";
 		
 		ownerElement.onmouseover = 
 		 function() { 
