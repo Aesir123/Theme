@@ -114,43 +114,29 @@ function eraseCookie(name) {
 // Update code gen start
 function genPatchNoteRow(subj, text)
 {
-	return '<li><strong>' + subj + '</strong> ' + text + '</li>';
+	return '<li><strong>' + subj + '</strong> - ' + text + '</li>';
 }
 
 function genPatchNoteRows(jsonObjty)
 {
 	var txt = "";
 	for(var i = 0; i < jsonObjty.length; i++)
-		txt += genPatchNoteRow(jsonObjty[i][0], jsonObjty[i][1]);
+		txt += genPatchNoteRow(jsonObjty[i].Title, jsonObjty[i].Text);
 	
 	return txt;
 }
 
 function updateAlert(jsonObj)
 {
-	var txt = '<span> \
-	<div class="callout-backdrop" style="opacity: 0.85; transform: translateZ(0px); background-color: rgb(0, 0, 0);"> \
-	</div> \
-	<div class="modal" style="opacity: 1; transform: scale(1) translateZ(0px);"> \
-		<div class="modal-inner"><div class="markdown-modal change-log"> \
-				<div class="markdown-modal-header"> \
-					<strong>ES Theme Update</strong> (Released by:' + jsonObj.author + ' | Version Num. : ' + jsonObj.versionNumber + ') \
-	<div class="scroller-wrap fade"> \
-					<div class="scroller"> \
-						<img class="lead-video" src="' + jsonObj.animationLink + '"> \
-							<h1 class="changelog-added">Plugin </h1> \
-								<ul>' + genPatchNoteRows(jsonObj.pluginPatchNotes) + '</ul> \
-			<h1 class="changelog-improved">Theme </h1> \
-								<ul>' + genPatchNoteRows(jsonObj.themePatchNotes) + '</ul> \
-				</div>\
-				</div>\
-			<div class="markdown-modal-footer">Missed an update? <a href="https://blog.discordapp.com/tag/change-log/" target="_blank">Check out our previous change logs</a> \
-			</div> \
-		</div> \
-		</div></div> \
-		</span>';
+	var txt = '<span><div class="callout-backdrop" style="opacity: 0.85; transform: translateZ(0px); background-color: rgb(0, 0, 0);"></div><div class="modal" style="opacity: 1; transform: scale(1) translateZ(0px);"><div class="modal-inner"><div class="markdown-modal change-log"><div class="markdown-modal-header"><strong>ES Theme Update</strong> (Released by:'
++ jsonObj.author + ' | Version Num. : ' + jsonObj.versionNumber + ') \t<div class="scroller-wrap fade"><div class="scroller"><img class="lead-video" src="'
++ jsonObj.animationLink + '"><h1 class="changelog-added">Plugin </h1><ul>'
++ genPatchNoteRows(jsonObj.pluginPatchNotes) + '</ul><h1 class="changelog-improved">Theme </h1><ul>'
++ genPatchNoteRows(jsonObj.themePatchNotes) + '</ul></div></div><div class="markdown-modal-footer">The update is going to be installed in <a id="updateTimerElement">10</a> seconds</div></div></div></div></span>';
+
 		
-//	$('#app-mount').append(txt);
+	$('#app-mount').append(txt);
+	updateTimer(jsonObj.versionNumber);
 }
 
 function handleUpdate(txt)
@@ -163,7 +149,7 @@ function handleUpdate(txt)
 	
 	if(ver != parseInt(cookieVer))
 	{
-	//	updateAlert(obj);
+		updateAlert(obj);
 	}
 }
 
