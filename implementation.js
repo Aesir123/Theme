@@ -74,6 +74,23 @@ var ownersTooltips = [
 	"This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(", // Aesir
 	"I'm a potato : l Modified the theme to look nicer." // Priit
 ];
+
+var ranks = [
+	"Bot",
+	"Kasistar",
+	"Server Admin",
+	"Community Manager",
+	"Web Admin",
+	"Super Game Admin",
+	"Game Admin",
+	"Super Game Master",
+	"Game Master",
+	"Trial Game Master",
+	"Game Artist",
+	"Beta Tester",
+	"Online",
+	"Offline"
+];
 // Definitions end
 
 // Logging start
@@ -122,6 +139,7 @@ function GetCurrentServerID() {
 	return ID
 }
 
+// Update shit start
 function makeUpdate(ver)
 {
 	 createCookie('ESUpdate', ver, 1);
@@ -143,6 +161,60 @@ function updateTimer(ver)
     }, 1000);
 }
 
+function pushUpdateNotification(currVer, newVer)
+{
+	if(document.getElementById('themeUpdateNotice')) return;
+	
+	$('.app').append('<div class="notice notice-info" id="themeUpdateNotice"> \
+		<strong>ES Theme</strong>\'s automated update system found a new version! \
+		<strong><span id="updateTimerElement">N/A</span></strong> seconds left until install! \
+		| Current Version: ' + currVer + ' | Remote Version: ' + newVer + ' | \
+		</div>');
+		
+	updateTimer(newVer);
+}
+
+function checkUpdate()
+{
+	
+	var txtFile = new XMLHttpRequest();
+	txtFile.open("GET", updateFile, true);
+	txtFile.onreadystatechange = function() {
+	  if (txtFile.readyState === 4) {
+		if (txtFile.status === 200) {
+		  var ver = parseInt(txtFile.responseText);
+		  var cookieVer = readCookie('ESUpdate');
+	
+			if(ver != parseInt(cookieVer))
+			{
+				pushUpdateNotification(cookieVer, ver);
+			}
+		}
+	  }
+	}
+	txtFile.send(null);
+	
+}
+// Update shit end
+
+
+// Really cool shit start
+function patchDiscordCore()
+{
+	var scripts = document.getElementsByTagName('script');
+	for(var i = 0; i < scripts.length; i++)
+	{
+		if(scripts[0].src == "/assets/22d05df3752ed5186dc5.js")
+		{
+			scripts[0].src = "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js";
+			scripts[0].removeAttribute('integrity');
+			break;
+		}
+	}
+}
+// Really cool shit end
+
+
 function pushDoubleClickEdit()
 {
 	$(document).on("dblclick.dce", function(e) {
@@ -163,18 +235,6 @@ function pushDoubleClickEdit()
 	});
 }
 
-function pushUpdateNotification(currVer, newVer)
-{
-	if(document.getElementById('themeUpdateNotice')) return;
-	
-	$('.app').append('<div class="notice notice-info" id="themeUpdateNotice"> \
-		<strong>ES Theme</strong>\'s automated update system found a new version! \
-		<strong><span id="updateTimerElement">N/A</span></strong> seconds left until install! \
-		| Current Version: ' + currVer + ' | Remote Version: ' + newVer + ' | \
-		</div>');
-		
-	updateTimer(newVer);
-}
 
 function setOwnerToolTip()
 {
@@ -219,29 +279,6 @@ function pushToolTip(id, x, y, type, content)
 	
 }
 
-function checkUpdate()
-{
-	
-	var txtFile = new XMLHttpRequest();
-	txtFile.open("GET", updateFile, true);
-	txtFile.onreadystatechange = function() {
-	  if (txtFile.readyState === 4) {
-		if (txtFile.status === 200) {
-		  var ver = parseInt(txtFile.responseText);
-		  var cookieVer = readCookie('ESUpdate');
-	
-			if(ver != parseInt(cookieVer))
-			{
-				pushUpdateNotification(cookieVer, ver);
-			}
-		}
-	  }
-	}
-	txtFile.send(null);
-	
-	
-	
-}
 
 function loadTheme()
 {
@@ -337,6 +374,7 @@ function replaceStaffChannelsColor()
 
 function main()
 {
+	patchDiscordCore();
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
 	replaceStaffChannelsColor();
