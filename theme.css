@@ -285,7 +285,7 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 
 .modal-content .form-inner p { color: #E6E6E6; }
 
-.form .form-header { background: rgba(0, 0, 0, 0.85); border-bottom: 1px solid rgba(0, 0, 0, 0.53); }
+.form .form-header { background: rgba(44, 55, 86, 1); border-bottom: 1px solid rgba(0, 0, 0, 0.53); }
 
 .popout header { background-color: var(--main-color); }
 
