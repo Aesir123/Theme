@@ -361,6 +361,18 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 
 .instant-invites .instant-invites-list .instant-invite .member { color: #C3C3C3; }
 
+#instant-invite-modal .form-actions { background-color: #2c3756; }
+
+#instant-invite-modal .form-header header { color: #e8e8e8; }
+
+#instant-invite-modal .blurb { color: #e8e8e8; }
+
+#instant-invite-modal .form-inner { background-color: rgb(29, 32, 60); }
+
+#instant-invite-modal-advanced .form-actions { background-color: #2c3756; padding: 18px 85px; }
+
+#instant-invite-modal-advanced .form-actions .btn-default { color: #acb0b5; background-color: #1d203c; padding-top: 7px; }
+
 #permissions .permission-actions.disabled > div { border: #565963; background: #565963; position: relative; }
 
 .checkbox .checkbox-inner span { background: rgba(0, 20, 40, 0.70); transition: .2s linear all !important; }
@@ -807,9 +819,11 @@ textarea { background: transparent !important; }
 
 .avatar-uploader .avatar-uploader-inner { background-color: var(--main-color); border: 5px solid var(--hover-color); }
 
-.form .form-actions { background-color: rgba(0, 0, 0, 0.85); border-top: 1px solid rgba(0, 0, 0, 0.53); }
+.form .form-actions { background-color: #2c3756; border-top: 1px solid rgba(0, 0, 0, 0.53); }
 
 .form .btn-default { background-color: rgba(0, 0, 0, 0.77); padding: 10px 0; width: 75px; height: 35.5px; border-radius: 3px; border-bottom: none; }
+
+.form .btn-default:hover { border: 1px solid #949494; }
 
 .form .btn-primary { background-color: var(--main-color); }
 
