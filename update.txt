@@ -10,7 +10,7 @@
 		},
 		
 		{ 
-			"Title": "Gossip"
+			"Title": "Gossip",
 			"Text": "Kasistar is not gay anymore! Oh, sorry, i didnt want to say lies :c"
 		}
 		
@@ -20,3 +20,4 @@
 			"Text": "This should be compiled by Arch, but he is a lazy ass..."
 		}
 ]}
+
