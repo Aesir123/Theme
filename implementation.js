@@ -199,18 +199,23 @@ function checkUpdate()
 
 
 // Really cool shit start
+function replacejscssfile(oldfilename, newfilename, filetype){
+    var targetelement=(filetype=="js")? "script" : (filetype=="css")? "link" : "none" //determine element type to create nodelist using
+    var targetattr=(filetype=="js")? "src" : (filetype=="css")? "href" : "none" //determine corresponding attribute to test for
+    var allsuspects=document.getElementsByTagName(targetelement)
+    for (var i=allsuspects.length; i>=0; i--){ //search backwards within nodelist for matching elements to remove
+        if (allsuspects[i] && allsuspects[i].getAttribute(targetattr)!=null && allsuspects[i].getAttribute(targetattr).indexOf(oldfilename)!=-1){
+            var newelement=createjscssfile(newfilename, filetype)
+            allsuspects[i].parentNode.replaceChild(newelement, allsuspects[i])
+        }
+    }
+}
+
 function patchDiscordCore()
 {
-	var scripts = document.getElementsByTagName('script');
-	for(var i = 0; i < scripts.length; i++)
-	{
-		if(scripts[0].src == "/assets/22d05df3752ed5186dc5.js")
-		{
-			scripts[0].src = "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js";
-			scripts[0].removeAttribute('integrity');
-			break;
-		}
-	}
+	replacejscssfile("/assets/22d05df3752ed5186dc5.js", "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js", "js");
+	replacejscssfile("22d05df3752ed5186dc5.js", "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js", "js"); // not sure but...
+	
 }
 // Really cool shit end
 
