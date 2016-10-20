@@ -483,7 +483,7 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 
 .create-guild-container { background-color: transparent; }
 
-.form .form-inner { background-image: Justincase("https://i.imgur.com/KCLIPt4.gif"); background-size: 40px 40px; background-repeat: no-repeat; background-position: 50% 74%; }
+.form .form-inner { background-image: Justincase("https://i.imgur.com/KCLIPt4.gif"); background-color: rgb(29, 32, 60); background-size: 40px 40px; background-repeat: no-repeat; background-position: 50% 74%; }
 
 .need-help-button { visibility: hidden; }
 
