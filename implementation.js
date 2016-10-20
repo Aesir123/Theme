@@ -111,66 +111,6 @@ function eraseCookie(name) {
 }
 // Cookie management end
 
-// Update code gen start
-function genPatchNoteRow(subj, text)
-{
-	return '<li><strong>' + subj + '</strong> - ' + text + '</li>';
-}
-
-function genPatchNoteRows(jsonObjty)
-{
-	var txt = "";
-	for(var i = 0; i < jsonObjty.length; i++)
-		txt += genPatchNoteRow(jsonObjty[i].Title, jsonObjty[i].Text);
-	
-	return txt;
-}
-
-function updateAlert(jsonObj)
-{
-	var txt = '<span><div class="callout-backdrop" style="opacity: 0.85; transform: translateZ(0px); background-color: rgb(0, 0, 0);"></div><div class="modal" style="opacity: 1; transform: scale(1) translateZ(0px);"><div class="modal-inner"><div class="markdown-modal change-log"><div class="markdown-modal-header"><strong>ES Theme Update</strong> (Released by:'
-+ jsonObj.author + ' | Version Num. : ' + jsonObj.versionNumber + ') \t<div class="scroller-wrap fade"><div class="scroller"><img class="lead-video" src="'
-+ jsonObj.animationLink + '"><h1 class="changelog-added">Plugin </h1><ul>'
-+ genPatchNoteRows(jsonObj.pluginPatchNotes) + '</ul><h1 class="changelog-improved">Theme </h1><ul>'
-+ genPatchNoteRows(jsonObj.themePatchNotes) + '</ul></div></div><div class="markdown-modal-footer">The update is going to be installed in <a id="updateTimerElement">10</a> seconds</div></div></div></div></span>';
-
-		
-	$('#app-mount').append(txt);
-	updateTimer(jsonObj.versionNumber);
-}
-
-function handleUpdate(txt)
-{
-	var obj = JSON.parse(txt);
-	
-	var ver = obj.versionNumber;
-		  
-	var cookieVer = readCookie('ESUpdate');
-	
-	if(ver != parseInt(cookieVer))
-	{
-		updateAlert(obj);
-	}
-}
-
-function checkUpdate()
-{
-	
-	var txtFile = new XMLHttpRequest();
-	txtFile.open("GET", updateFile, true);
-	txtFile.onreadystatechange = function() {
-	  if (txtFile.readyState === 4) {
-		if (txtFile.status === 200) {
-			handleUpdate(txtFile.responseText);
-		  
-		}
-	  }
-	}
-	txtFile.send(null);
-	
-}
-// Update code gen end
-
 function GetCurrentServerID() {
 	var ID = 0
 
@@ -279,6 +219,29 @@ function pushToolTip(id, x, y, type, content)
 	
 }
 
+function checkUpdate()
+{
+	
+	var txtFile = new XMLHttpRequest();
+	txtFile.open("GET", updateFile, true);
+	txtFile.onreadystatechange = function() {
+	  if (txtFile.readyState === 4) {
+		if (txtFile.status === 200) {
+		  var ver = parseInt(txtFile.responseText);
+		  var cookieVer = readCookie('ESUpdate');
+	
+			if(ver != parseInt(cookieVer))
+			{
+				pushUpdateNotification(cookieVer, ver);
+			}
+		}
+	  }
+	}
+	txtFile.send(null);
+	
+	
+	
+}
 
 function loadTheme()
 {
