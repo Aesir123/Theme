@@ -2286,4 +2286,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	background-color: transparent;
 }
 
+#huan {
+	content: ": l";
+}
 
