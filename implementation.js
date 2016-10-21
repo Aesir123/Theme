@@ -414,7 +414,7 @@ function pushHuan()
 	var huanText = '<a id="huan" />';
 	for(var i = 0; i < msgs.length; i++)
 	{
-		msgs.innerHTML.replace(': l', '"' + huanText + '"');
+		msgs[i].innerHTML.replace(': l', '"' + huanText + '"');
 	}
 }
 
