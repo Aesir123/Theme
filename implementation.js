@@ -438,6 +438,7 @@ function main()
 
 esIntegration.prototype.onSwitch = function() {
 	replaceStaffChannelsColor();
+	var rtn = applyEmoticons();
 	if(document.getElementById('owner-tooltip')) $('#owner-tooltip').remove();
 	if(GetCurrentServerID() == ESServerID) setOwnerToolTip();
 	
