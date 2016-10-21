@@ -228,8 +228,10 @@ function replacejscssfile(oldfilename, newfilename, filetype){
 
 function patchDiscordCore()
 {
+	writeLogLine("Patching Discord core...", "");
 	replacejscssfile("/assets/22d05df3752ed5186dc5.js", "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js", "js");
 	replacejscssfile("22d05df3752ed5186dc5.js", "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js", "js"); // not sure but...
+	writeLogLine("Discord core patched!", "");
 	
 }
 // Really cool shit end
@@ -237,6 +239,8 @@ function patchDiscordCore()
 
 function pushDoubleClickEdit()
 {
+	
+	writeLogLine("Setting up dbl-clk edit...", "Misc");
 	$(document).on("dblclick.dce", function(e) {
         var target = $(e.target);
         if(target.parents(".message").length > 0) {
@@ -253,11 +257,13 @@ function pushDoubleClickEdit()
 
         }
 	});
+	writeLogLine("Dbl-click edit applied", "Misc");
 }
 
 
 function setOwnerToolTip()
 {
+	writeLogLine("Applying owners styles...", "Theme");
 	for(var x = 0; x < owners.length; x++)
 	{
 		var members = document.getElementsByClassName('member-username-inner');
@@ -282,10 +288,13 @@ function setOwnerToolTip()
 			if(document.getElementById('owner-tooltip')) $('#owner-tooltip').remove(); 
 		 };
 	}
+	
+	writeLogLine("Owners style applied!", "Theme");
 }
 
 function pushOwnerToolTip(position, type)
 {
+	writeLogLine("Applying owners tooltips", "Tooltip");
 	pushToolTip('owner-tooltip', position.left, position.top, top, ownersTooltips[type]);
 }
 
@@ -296,15 +305,17 @@ function pushToolTip(id, x, y, type, content)
 	var toolTips = document.getElementsByClassName('tooltips')[0];
 	var toolTipHTML = '<div id="' + id + '" class="tooltip tooltip-' + type + ' tooltip-normal" style="left: '+x+'; top: '+y+'">' + content + '</div>';
 	toolTips.innerHTML += toolTipHTML;
-	
+	writeLogLine("Tooltip " + id + " applied", "Tooltip");
 }
 
 
 function loadTheme()
 {
 	var cssId = 'ESThemeImplementation';
+	writeLogLine("Detecting custom css...", "Theme");
 	if (!document.getElementById(cssId))
 	{
+		writeLogLine("Custom css missing! Applying ESTheme css...", "Theme");
 		var customCss = document.getElementById('customcss');
 		var head  = document.getElementsByTagName('head')[0];
 		var link  = document.createElement('link');
@@ -315,6 +326,8 @@ function loadTheme()
 		link.media = 'all';
 		customCss.parentElement.insertBefore(link, customCss);
 	}
+	else
+		writeLogLine("Custom css already applied!", "Theme");
 }
 
 function unloadTheme()
@@ -385,6 +398,7 @@ function replaceStaffChannelsColor()
 			if(chans[i].innerHTML == staffChanNames[x]
 				&& chans[i].parentElement.className != 'title')
 			{
+				writeLogLine("Channels customization applied to " + chans[i].innerHTML + " channel", "Theme");
 				if(chans[i].className.indexOf(staffChanClass) == -1)
 					chans[i].className += (" " + staffChanClass);
 				
