@@ -2285,6 +2285,12 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .CodeMirror-scrollbar-filler {
 	background-color: transparent;
 }
+.popout-menu {
+    background: #234a61;
+}
+#instant-invite-modal-advanced .form-inner {
+    background-color: rgb(29, 32, 60);
+}
 
 @-webkit-keyframes huanAni
 {
