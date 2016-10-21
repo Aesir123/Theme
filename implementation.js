@@ -361,6 +361,8 @@ function applyEmoticons()
 		cnt += applyEmoticon(emojiList[i][0], emojiList[i][1]);
 	}
 	
+	pushHuan();
+	
 	return cnt;
 }
 
@@ -389,6 +391,16 @@ function replaceStaffChannelsColor()
 				break;
 			}
 		}
+	}
+}
+
+function pushHuan()
+{
+	var msgs = document.getElementsByClassName('markup');
+	var huanText = '<a id="huan" />';
+	for(var i = 0; i < msgs.length; i++)
+	{
+		msgs.innerHTML.replace(': l', '"' + huanText + '"');
 	}
 }
 
