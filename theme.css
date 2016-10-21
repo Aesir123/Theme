@@ -2286,7 +2286,18 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	background-color: transparent;
 }
 
-#huan {
+@-webkit-keyframes huanAni
+{
+    0%   {color:red;}
+    14%  {color:orange;}
+    28%  {color:yellow;}
+    42%  {color:green;}
+    56%  {color:blue;}
+    70%  {color:rgb(75, 0, 130);}
+    100%   {color:rgb(143, 0, 255);}
+}
+#huan:before {
 	content: ": l";
+    -webkit-animation: huanAni 1s infinite linear;
 }
 

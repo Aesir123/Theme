@@ -411,10 +411,10 @@ function replaceStaffChannelsColor()
 function pushHuan()
 {
 	var msgs = document.getElementsByClassName('markup');
-	var huanText = '<a id="huan" />';
+	var huanText = "<span id=\"huan\" />";
 	for(var i = 0; i < msgs.length; i++)
 	{
-		msgs[i].innerHTML.replace(': l', '"' + huanText + '"');
+		msgs[i].innerHTML = msgs[i].innerHTML.replace(": l", " " + huanText);
 	}
 }
 
