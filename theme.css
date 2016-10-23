@@ -1771,7 +1771,7 @@ div#bd-pub-button:hover { background-color: #43B581 !important; transition: .3s 
 
 .theme-dark .themed-popout .header { background-color: rgba(32,80,112,0.9); box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); border-bottom: 2px solid var(--main-color); }
 
-.theme-dark .themed-popout .footer { background-color: rgba(0, 0, 0, 0.68); border-top: 2px solid var(--main-color); }
+.theme-dark .themed-popout .footer { background-color: rgba(32, 76, 105, 0.9); border-top: 2px solid var(--main-color); }
 
 .theme-dark .messages-popout-wrap .messages-popout .message-group { border-color: black; background-color: rgba(0, 0, 0, 0.59); }
 
@@ -2286,10 +2286,13 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	background-color: transparent;
 }
 .popout-menu {
-    background: #234a61;
+	background: #234a61;
 }
 #instant-invite-modal-advanced .form-inner {
-    background-color: rgb(29, 32, 60);
+	background-color: rgb(29, 32, 60);
+}
+.private-channel-recipients-invite .body .scroller {
+	background-color: rgba(5, 36, 74, 0.92);
 }
 
 @-webkit-keyframes huanAni
