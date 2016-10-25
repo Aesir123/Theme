@@ -2285,6 +2285,9 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .CodeMirror-scrollbar-filler {
 	background-color: transparent;
 }
+.CodeMirror-cursor {
+	border-left: 1px solid #057f95;
+}
 .popout-menu {
 	background: #234a61;
 }
