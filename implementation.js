@@ -142,7 +142,7 @@ function GetCurrentServerID() {
 // Update shit start
 function makeUpdate(ver)
 {
-	 createCookie('ESUpdate', ver, 1);
+	 createCookie('ESUpdate', ver, 31);
 	 location.reload();
 }
 
