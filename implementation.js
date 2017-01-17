@@ -51,7 +51,9 @@ var emojiList = [
 		["happy", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/happy.gif"],
 		["drunk", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/drunk.gif"],
 		["waiting", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/waiting.gif"],
-		["shake", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/shake.gif"]
+		["shake", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/shake.gif"],
+		["captain", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/captain.gif"],
+		["fubar", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/fubar.gif"]
 //		["", ""],
 //		["", ""]
 	
