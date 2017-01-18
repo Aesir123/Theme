@@ -74,7 +74,7 @@ var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.txt"
 
 var localUpdateFile = "ESUpdateData.txt"
 
-var owners = ['Aesir', 'Arch']; // Who else?
+var owners = ['Cælestis', 'Arch']; // Who else?
 
 var ownersTooltips = [
 	"This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(", // Aesir
@@ -133,6 +133,23 @@ function eraseCookie(name) {
     createCookie(name,"",-1);
 }
 // Cookie management end
+
+function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
+}
 
 function GetCurrentServerID() {
 	var ID = 0
@@ -426,6 +443,8 @@ function pushHuan()
 
 function main()
 {
+	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', function());
+	$(".app").append("<canvas id='spiders' />");
 	patchDiscordCore();
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
