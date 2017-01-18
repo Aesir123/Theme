@@ -443,8 +443,7 @@ function pushHuan()
 
 function main()
 {
-	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', function());
-	$(".app").append("<canvas id='spiders' />");
+	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', pushHuan);
 	patchDiscordCore();
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");

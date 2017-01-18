@@ -669,7 +669,7 @@ $(function() {
             y: height / 3
         };
 
-        canvas = document.getElementById('spiders');
+        canvas = document.getElementById('body');
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
