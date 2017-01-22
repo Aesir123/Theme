@@ -1,4 +1,5 @@
 
+///////////////////////////////////////////////////////////////////////////////////////
 
 
 // Definitions start
@@ -347,7 +348,7 @@ function loadTheme()
 		link.type = 'text/css';
 		link.href = 'https://rawgit.com/Aesir123/Theme/master/theme.css';
 		link.media = 'all';
-		customCss.parentElement.insertBefore(link, customCss);
+		head.insertBefore(link, customCss);
 	}
 	else
 		writeLogLine("Custom css already applied!", "Theme");
@@ -444,14 +445,14 @@ function pushHuan()
 function main()
 {
 	var canvas = document.createElement('canvas');
-    div = document.getElementById('app'); 
+    div = document.getElementsByClassName('app')[0]; 
     canvas.id     = "spiders";
     canvas.width  = 1224;
     canvas.height = 768;
     canvas.style.zIndex   = 8;
     canvas.style.position = "absolute";
     canvas.style.border   = "1px solid";
-    $(".app").appendChild(canvas);
+    div.appendChild(canvas);
 	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', pushHuan);
 	patchDiscordCore();
 	var rtn = applyEmoticons();
