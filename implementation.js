@@ -303,7 +303,7 @@ function setOwnerToolTip()
 		
 		ownerElement.onmouseover = 
 		 function() { 
-			 pushOwnerToolTip(this.getBoundingClientRect(), this.getElementsByClassName('member-username-inner')[0].innerHTML == 'Aesir' ? 0 : 1);
+			 pushOwnerToolTip(this.getBoundingClientRect(), this.getElementsByClassName('member-username-inner')[0].innerHTML == owners[0] ? 0 : 1);
 		 };
 		 
 		 ownerElement.onmouseout = 
