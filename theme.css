@@ -2313,17 +2313,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
     -webkit-animation: huanAni 1s infinite linear;
 }
 
-
-
-:hov
-
-
-.cls
-
-element.style {
-    /* z-index: 8; */
-}
 #spiders
 {
-	z-index: -1;
+	z-index: -1 !important;
 }
