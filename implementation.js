@@ -444,7 +444,7 @@ function pushHuan()
 
 function main()
 {
-	var canvas = document.createElement('canvas');
+/*	var canvas = document.createElement('canvas');
     div = document.getElementsByClassName('app')[0]; 
     canvas.id     = "spiders";
     canvas.width  = 1224;
@@ -453,7 +453,7 @@ function main()
     canvas.style.position = "absolute";
     canvas.style.border   = "1px solid";
     div.appendChild(canvas);
-	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', pushHuan);
+	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', pushHuan);*/
 	patchDiscordCore();
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
