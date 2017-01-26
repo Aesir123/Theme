@@ -2321,3 +2321,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .search-bar-icon .icon {
     right: 0;
 }
+
+.guild-channels .channel-text.unread:not(.selected):not(.channel-muted) a {
+    color: #0789a0;
+}
