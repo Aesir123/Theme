@@ -223,7 +223,7 @@ function checkUpdate()
 
 
 // Really cool shit start
-function createjscssfile(filename, filetype){
+/*function createjscssfile(filename, filetype){
     if (filetype=="js"){ //if filename is a external JavaScript file
         var fileref=document.createElement('script')
         fileref.setAttribute("type","text/javascript")
@@ -257,7 +257,7 @@ function patchDiscordCore()
 	replacejscssfile("22d05df3752ed5186dc5.js", "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js", "js"); // not sure but...
 	writeLogLine("Discord core patched!", "");
 	
-}
+}*/
 // Really cool shit end
 
 
@@ -432,6 +432,7 @@ function replaceStaffChannelsColor()
 	}
 }
 
+
 function pushHuan()
 {
 	var msgs = document.getElementsByClassName('markup');
@@ -453,8 +454,8 @@ function main()
     canvas.style.position = "absolute";
     canvas.style.border   = "1px solid";
     div.appendChild(canvas);
-	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', pushHuan);*/
-	patchDiscordCore();
+	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', pushHuan);
+	patchDiscordCore();*/
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
 	replaceStaffChannelsColor();

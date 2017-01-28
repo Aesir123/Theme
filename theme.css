@@ -2313,10 +2313,10 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
     -webkit-animation: huanAni 1s infinite linear;
 }
 
-#spiders
+/*#spiders
 {
 	z-index: -1 !important;
-}
+}*/
 
 .search-bar-icon .icon {
     right: 0;
