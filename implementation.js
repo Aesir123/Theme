@@ -165,7 +165,7 @@ function GetCurrentServerID() {
 
 function isOnIRCMode()
 {
-	return document.getElementsByClassName['compact'].length > 0;
+	return document.getElementsByClassName('compact').length > 0;
 }
 
 // Update shit start
