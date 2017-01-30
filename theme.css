@@ -127,9 +127,9 @@ span:active .modal:hover{
 /* Modal end*/
 
 
-.account:after {content: "edited by Aesir"; color: rgba(255,255,255,0.2); font-size: 11px; font-weight: bold; position: absolute; bottom: 0; left: 149px; right: 0; opacity: 1;}
+.account:after {content: "edited by Aesir & Arch"; color: rgba(255,255,255,0.2); font-size: 11px; font-weight: bold; position: absolute; bottom: 0; left: 130px; right: 0; opacity: 1;}
 
-.user-popout .header {background: rgba(0, 0, 0, .3);}
+.user-popout .header { background: rgba(0, 0, 0, .8); border-bottom: 2px var(--main-color) solid; }
 
 .user-popout {background: transparent !important;opacity: 1;}
 
@@ -146,7 +146,7 @@ span:active .modal:hover{
 	
 #user-profile-modal .header {background: transparent !important;overflow: hidden;height: 182px;}
 
-.user-popout .body {background: rgba(0, 0, 0, .8);}
+.user-popout .body { background: rgba(17, 59, 60, 0.53); }
 
 .user-popout .footer {background: rgba(0, 0, 0, .8);}
 
@@ -252,6 +252,8 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 .region-select-modal .region-select-modal-option:hover { border-color: var(--main-color); }
 
 .form .radio-group .radio { color: #fff; }
+
+.form .radio-group { margin-bottom: 0; }
 
 .need-help-modal .header input[type=text] { box-shadow: 0 2px 1px var(--main-color); }
 
@@ -1409,8 +1411,6 @@ form.auth-form { background: rgba(0, 0, 0, 0.56); }
 
 .user-popout .avatar-wrapper .avatar-popout { border: 4px solid var(--hover-color); background-color: var(--hover-color); }
 
-.user-popout .body { padding-bottom: 10px; }
-
 .user-popout .footer { border-top: 2px var(--main-color) solid; }
 
 .user-popout .footer .quick-message-wrapper .input { border: 2px solid var(--main-color); background: #0C0C0C; color: #fff; }
@@ -2313,15 +2313,14 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
     -webkit-animation: huanAni 1s infinite linear;
 }
 
-/*#spiders
-{
-	z-index: -1 !important;
-}*/
-
 .search-bar-icon .icon {
     right: 0;
 }
 
 .guild-channels .channel-text.unread:not(.selected):not(.channel-muted) a {
     color: #0789a0;
+}
+
+.guild-channels header {
+    margin: 5px 0 0;
 }
