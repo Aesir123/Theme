@@ -163,6 +163,11 @@ function GetCurrentServerID() {
 	return ID
 }
 
+function isOnIRCMode()
+{
+	return document.getElementsByClassName['compact'].length > 0;
+}
+
 // Update shit start
 function makeUpdate(ver)
 {
@@ -435,6 +440,9 @@ function replaceStaffChannelsColor()
 
 function pushHuan()
 {
+	if(isOnIRCMode())
+		return;
+	
 	var msgs = document.getElementsByClassName('markup');
 	var huanText = "<span id=\"huan\" />";
 	for(var i = 0; i < msgs.length; i++)
