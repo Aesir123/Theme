@@ -443,7 +443,7 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 
 .avatar-large { width: 40px; height: 40px; background-size: 40px 40px !important; left: 8px; }
 
-.channel-textarea { margin: 5px 0 10px; }
+.channel-textarea { margin: 5px 0 17px; }
 
 .theme-dark .chat form { border-top: none; }
 
@@ -694,8 +694,6 @@ textarea { background: transparent !important; }
 .channel-textarea-upload { border-right-color: rgba(255, 255, 255, 0.1) !important; }
 
 .channel-textarea-inner { border: 2px solid rgba(255, 255, 255, 0.1) !important; background: rgba(0, 0, 0, 0.6) !important; }
-
-.typing { font-size: 11px; }
 
 .spoiler span { display: none; }
 
@@ -1587,7 +1585,9 @@ span[data-reactid=".0.5.$=1$UserSettingsModal.0.0.1.0.$LOCALE.0.1:1.0.1.$1.0"] {
 
 .typing strong { font-weight: 700; color: #A5A5A5; }
 
-.typing { font-size: 11px; color: #A5A5A5; }
+.typing { font-size: 11px; color: #A5A5A5; height: 20px; }
+
+.typing .ellipsis { margin-top: 4px; }
 
 .guilds-wrapper .guilds .guild .guild-inner { background-color: rgba(0, 0, 0, 0.5) !important; }
 
