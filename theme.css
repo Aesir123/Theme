@@ -443,7 +443,7 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 
 .avatar-large { width: 40px; height: 40px; background-size: 40px 40px !important; left: 8px; }
 
-.channel-textarea { margin: 10px 0 30px; }
+.channel-textarea { margin: 5px 0 10px; }
 
 .theme-dark .chat form { border-top: none; }
 
@@ -460,6 +460,8 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 .theme-dark .chat > .content .messages .divider span { background: transparent; }
 
 .chat .divider > span { color: #F1F1F1; }
+
+.message-group .comment { margin-right: 0; }
 
 .message-group .comment .markup pre { background: rgba(0, 0, 0, 0.45); border: 2px solid #29363E; }
 
@@ -701,7 +703,19 @@ textarea { background: transparent !important; }
 
 #twitchcord-button { background-size: 24px; background-position: 20px; background-color: transparent; }
 
-/*.message-group.compact .timestamp { position: relative; top: -4px; }*/
+.message-group { margin-left: 10px; padding: 10px 0;}
+
+.message-group.compact .timestamp { width: 45px; vertical-align: text-bottom; }
+
+.message-group.compact .emoji { width: 18px; height: 18px; vertical-align: sub; }
+
+.message-group.compact .emoji.jumboable { width: 18px; height: 18px; }
+
+.emoji { margin: 0 0 0 0 !important; }
+
+.emotewrapper { vertical-align: -0.6em; }
+
+.message-group.compact .message { margin: 2px 0; }
 
 .message-group.compact .message .markup .user-name { margin-right: 10px; }
 
@@ -1501,7 +1515,7 @@ a[data-reactid*=".0.1.1.0.1.0.0.1.3.0"] { background-color: var(--main-color); b
 
 .markup:not([style*="color: color: rgba(255, 255, 255, 0.8);"]) { color: #B1B1B1; }
 
-.message-group .comment .markup { color: #B7B7B7; }
+.message-group .comment .markup { color: #B7B7B7;  margin-top: 2px; }
 
 ul.bda-slist { margin-top: 18px; width: 588px; margin-left: -34px; }
 
@@ -1569,7 +1583,7 @@ span[data-reactid=".0.5.$=1$UserSettingsModal.0.0.1.0.$LOCALE.0.1:1.0.1.$1.0"] {
 
 .user-popout .footer .update-notice { color: #A0A0A0; }
 
-.message-group.compact .message .markup .user-name:After { content: ":"; font-size: 18px; line-height: 16px; font-weight: 600; }
+.message-group.compact .message .markup .user-name:After { content: ":"; font-size: 15px; line-height: 16px; font-weight: 600; }
 
 .typing strong { font-weight: 700; color: #A5A5A5; }
 
@@ -1583,19 +1597,15 @@ span[data-reactid=".0.5.$=1$UserSettingsModal.0.0.1.0.$LOCALE.0.1:1.0.1.$1.0"] {
 
 .guilds-wrapper .guilds .guild { height: 40px; width: 40px; }
 
-.guilds-wrapper .guilds .guild.unread:before { background: var(--main-color); }
-
-.guilds-wrapper .guilds .guild.selected:before { height: 30px; border-radius: 20px; background: var(--main-color); margin-top: -15px; }
-
 .guilds-wrapper .guilds .friends-icon { width: 40px; height: 40px; background-size: 25px 25px; }
 
 .guilds { padding: 18px 20px 85px 20px !important; }
 
-.guilds-wrapper .guilds .guild.selected:before, .guilds-wrapper .guilds .guild.unread:before { left: -26px; }
-
 .guilds-wrapper .guild-separator:after { left: 0%; background: rgba(0, 0, 0, 0.3); }
 
 .guilds-wrapper .guilds .friends-online { text-transform: uppercase; font-weight: 600; color: #DCDCDC; margin: 10px -5px; word-wrap: normal; white-space: normal; width: 50px; cursor: pointer; -webkit-transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); overflow: hidden; border-radius: 4px; background-color: rgba(0, 0, 0, 0.41); font-size: 9px; text-align: center; line-height: 17px; }
+
+.guilds-wrapper .guilds .guild.selected:before, .guilds-wrapper .guilds .guild.unread:before { left: -25px; height: 30px; width: 10px; border-radius: 2px; margin-top: -15px; background: var(--main-color); }
 
 a.avatar-small[style*="font-size: 18px;"] { top: -4px; }
 
@@ -2222,29 +2232,21 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .activity strong { color: var(--main-color); }
 
 .message-text/* .member*/ {-webkit-transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); }
+
 .message-text:hover {background-color: rgba(255, 255, 255, 0.15); border-radius: 3px; }
 
-.channel-members h2 {
-    padding: 4px 15px;
-    width: 180px;
-}
-.channel-members .member+h2 {
-    margin-top: 15px;
-}
-.user-popout {
-    background: rgb(32, 80, 112) !important;
-}
-.status-invisible, .status-offline {
-    background-color: #999999;
-}
-.avatar-small .status {
-    width: 8px;
-    height: 8px;
-    border-radius: 0px;
-}
-.user-popout .avatar-wrapper .avatar-popout .status {
-	border-radius: 1px;
-}
+.channel-members h2 { padding: 4px 15px; width: 180px; }
+
+.channel-members .member+h2 { margin-top: 15px; }
+
+.user-popout { background: rgb(32, 80, 112) !important; }
+
+.status-invisible, .status-offline { background-color: #999999; }
+
+.avatar-small .status { width: 8px; height: 8px; border-radius: 0px; }
+
+.user-popout .avatar-wrapper .avatar-popout .status { border-radius: 1px; }
+
 ::-webkit-scrollbar {
 	height: 10px;
 	width: 10px;
@@ -2306,21 +2308,15 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
     42%  {color:green;}
     56%  {color:blue;}
     70%  {color:rgb(75, 0, 130);}
-    100%   {color:rgb(143, 0, 255);}
+    100% {color:rgb(143, 0, 255);}
 }
 #huan:before {
 	content: ": l";
     -webkit-animation: huanAni 1s infinite linear;
 }
 
-.search-bar-icon .icon {
-    right: 0;
-}
+.search-bar-icon .icon { right: 0; }
 
-.guild-channels .channel-text.unread:not(.selected):not(.channel-muted) a {
-    color: #0789a0;
-}
+.guild-channels .channel-text.unread:not(.selected):not(.channel-muted) a { color: #0789a0; }
 
-.guild-channels header {
-    margin: 5px 0 0;
-}
+.guild-channels header { margin: 5px 0 0; }
