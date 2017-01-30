@@ -2,7 +2,6 @@
 // implementation.js start
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -233,46 +232,6 @@ function checkUpdate()
 }
 // Update shit end
 
-
-// Really cool shit start
-/*function createjscssfile(filename, filetype){
-    if (filetype=="js"){ //if filename is a external JavaScript file
-        var fileref=document.createElement('script')
-        fileref.setAttribute("type","text/javascript")
-        fileref.setAttribute("src", filename)
-    }
-    else if (filetype=="css"){ //if filename is an external CSS file
-        var fileref=document.createElement("link")
-        fileref.setAttribute("rel", "stylesheet")
-        fileref.setAttribute("type", "text/css")
-        fileref.setAttribute("href", filename)
-    }
-    return fileref
-}
-
-function replacejscssfile(oldfilename, newfilename, filetype){
-    var targetelement=(filetype=="js")? "script" : (filetype=="css")? "link" : "none" //determine element type to create nodelist using
-    var targetattr=(filetype=="js")? "src" : (filetype=="css")? "href" : "none" //determine corresponding attribute to test for
-    var allsuspects=document.getElementsByTagName(targetelement)
-    for (var i=allsuspects.length; i>=0; i--){ //search backwards within nodelist for matching elements to remove
-        if (allsuspects[i] && allsuspects[i].getAttribute(targetattr)!=null && allsuspects[i].getAttribute(targetattr).indexOf(oldfilename)!=-1){
-            var newelement=createjscssfile(newfilename, filetype)
-            allsuspects[i].parentNode.replaceChild(newelement, allsuspects[i])
-        }
-    }
-}
-
-function patchDiscordCore()
-{
-	writeLogLine("Patching Discord core...", "");
-	replacejscssfile("/assets/22d05df3752ed5186dc5.js", "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js", "js");
-	replacejscssfile("22d05df3752ed5186dc5.js", "https://rawgit.com/Aesir123/Theme/master/core/coreFile1.js", "js"); // not sure but...
-	writeLogLine("Discord core patched!", "");
-	
-}*/
-// Really cool shit end
-
-
 function pushDoubleClickEdit()
 {
 	
@@ -344,7 +303,6 @@ function pushToolTip(id, x, y, type, content)
 	writeLogLine("Tooltip " + id + " applied", "Tooltip");
 }
 
-
 function loadTheme()
 {
 	var cssId = 'ESThemeImplementation';
@@ -401,7 +359,6 @@ function applyEmoticon(name, url)
 
 function applyEmoticons()
 {
-	
 	
 	var cnt = 0;
 	
@@ -460,17 +417,7 @@ function pushHuan()
 
 function main()
 {
-/*	var canvas = document.createElement('canvas');
-    div = document.getElementsByClassName('app')[0]; 
-    canvas.id     = "spiders";
-    canvas.width  = 1224;
-    canvas.height = 768;
-    canvas.style.zIndex   = 8;
-    canvas.style.position = "absolute";
-    canvas.style.border   = "1px solid";
-    div.appendChild(canvas);
-	loadScript('https://rawgit.com/Aesir123/Theme/master/dot_anim.js', pushHuan);
-	patchDiscordCore();*/
+
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
 	replaceStaffChannelsColor();
