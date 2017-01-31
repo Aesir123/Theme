@@ -701,7 +701,7 @@ textarea { background: transparent !important; }
 
 #twitchcord-button { background-size: 24px; background-position: 20px; background-color: transparent; }
 
-.message-group { margin-left: 10px; padding: 10px 0;}
+.message-group { margin-left: 10px; /*padding: 10px 0;*/}
 
 .message-group.compact .timestamp { width: 45px; vertical-align: text-bottom; }
 
