@@ -3,8 +3,8 @@
 :root { 
  --main-color: #057F95;
  --hover-color: #045B6B;
- }
- 
+}
+
 
 .callout-backdrop { background-color: black !important; background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important; -webkit-transition: 0.3s all ease; -o-transition: 0.3s all ease; -moz-transition: 0.3s all ease; transition: 0.3s all ease; background-size: cover !important; -webkit-filter: brightness(75%); }
 
@@ -16,7 +16,8 @@
 #user-profile-modal .header:before {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);}
+    content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);
+}
 
 
 
@@ -577,7 +578,7 @@ textarea { background: transparent !important; }
 
 .links, .chat, .typing, .content, .guild-channels, .private-channels, .guild-header header, .divider-red span, .messages-wrapper, #voice-connection { background: transparent !important; }
 
-.channels-wrap { background: rgba(0, 0, 0, 0.75); width: 220px; }
+.channels-wrap { background: rgba(0, 0, 0, 0.75); width: 220px; border-left: 1px solid transparent; }
 
 .content .flex-spacer { background: rgba(0, 0, 0, 0.85); }
 
@@ -595,7 +596,9 @@ textarea { background: transparent !important; }
 
 .guild-channels header h2, .guild-channels ul .channel a { color: #fff; }
 
-.guilds { padding: 18px 20px 85px 16px !important; background: rgba(0, 0, 0, 0.6) !important; }
+.guilds-wrapper .guilds { padding: 18px 0 0 15px; background: rgba(0, 0, 0, 0.6);}
+
+.guilds { padding-left: 16px }
 
 .guilds-add { font-size: 30px; background: #000; }
 
@@ -1622,19 +1625,25 @@ span[data-reactid=".0.5.$=1$UserSettingsModal.0.0.1.0.$LOCALE.0.1:1.0.1.$1.0"] {
 	line-height: 17px; 
 }
 
+.guilds-wrapper .guilds .guild.unread:before { 
+	left: -21px; 
+	height: 30px; 
+	width: 10px; 
+	border-radius: 2px; 
+	margin-top: -15px; 
+	background: var(--main-color); 
+}
+
 .guilds-wrapper .guilds .guild.selected:before {
-    -webkit-transition: height .25s ease-in-out,margin-top .25s ease-in-out;
-    transition: height .25s ease-in-out,margin-top .25s ease-in-out;
     height: 0px !important;
-    width: 39px !important;
+    width: 38px !important;
     border: 8px solid var(--main-color);
     border-left-width: 25px;
-    border-right-width: 26px;
+    border-right-width: 25px;
     border-top-color: transparent;
     border-bottom-color: transparent;
     background: rgba(35, 159, 165, 0) !important;
-    border-radius: 50px !important;
-    left: -25px !important;
+    left: -24px !important;
     margin-top: -8px !important;
 }
 

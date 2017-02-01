@@ -415,12 +415,36 @@ function pushHuan()
 	}
 }
 
+//listen to window size change and if maximized change padding of an element because discord window.innerWidth is fucked and 2px go off screen on both sides
+function guildsFullscreen()
+{
+	
+	$(window).resize(function() {
+		
+		var selStyles = document.querySelector("div.scroller.guilds");
+		//window width when maximized is 4px more than actual screen width >.>
+		if(window.innerWidth == (screen.availWidth + 4))
+		{
+			//This would just resize the window without visual change, but kind of intrusive to user experience : l
+			//window.resizeTo(screen.availWidth, window.innerHeight);
+			selStyles.style = "padding-left: 16px !important";
+			writeLogLine("changed to fullscreen, apply 16px", "guildsTest");
+		} else 
+		{
+			selStyles.style = "padding-left: 15px !important";
+			writeLogLine("changed to window, apply 15px", "guildsTest");
+		}
+	});
+	
+}
+
 function main()
 {
 
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
 	replaceStaffChannelsColor();
+	guildsFullscreen();
 	
 	if(GetCurrentServerID() == ESServerID) setOwnerToolTip();
 	pushDoubleClickEdit();
