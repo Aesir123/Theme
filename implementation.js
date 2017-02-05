@@ -1,3 +1,5 @@
+
+
 // implementation.js start
 
 
@@ -72,13 +74,21 @@ var ESServerID = 220645473747206140;
 
 var staffChanClass = "staff-channel-name";
 
-var dir = process.env.APPDATA + "\\BetterDiscord\\plugins\\"
+var dir = process.env.APPDATA + "\\BetterDiscord\\plugins\\";
 
-var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.txt"
+var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.txt";
 
-var localUpdateFile = "ESUpdateData.txt"
+var localUpdateFile = "ESUpdateData.txt";
 
 var owners = ['Cælestis', 'Arch']; // Who else?
+
+var animatedAvatarsDir = "https://rawgit.com/Aesir123/Theme/master/avatars/";
+
+var animatedAvatars = [
+	["181871636268449792", "Aesir.gif"],
+	["175329182333665281", "Future.gif"]
+];
+
 
 var ownersTooltips = [
 	"This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(", // Aesir
@@ -475,6 +485,29 @@ function guildsFullscreen()
 	
 }
 
+function replaceAvatars(avatars)
+{
+	for(var i = 0; i < avatars.length; i++)
+	{
+		for(var k = 0; k < animatedAvatars.length; k++)
+		{
+			if(avatars[i].style.backgroundImage.indexOf(animatedAvatars[k][0]) != -1)
+			{
+				avatars[i].style.backgroundImage = 'url(' + animatedAvatarsDir + animatedAvatars[k][1] + ')';
+				break;
+			}
+		}
+	}
+}
+
+function replaceAllAvatars()
+{
+	replaceAvatars(document.getElementsByClassName('avatar-large'));
+	replaceAvatars(document.getElementsByClassName('avatar-popout'));
+	replaceAvatars(document.getElementsByClassName('avatar-small'));
+}
+
+
 function main()
 {
 
@@ -483,7 +516,10 @@ function main()
 	replaceStaffChannelsColor();
 	guildsFullscreen();
 	
-	if(GetCurrentServerID() == ESServerID) setOwnerToolTip();
+	if(GetCurrentServerID() == ESServerID) 
+	{ 
+		setOwnerToolTip();
+	}
 	pushDoubleClickEdit();
 	
 	if(!developerVersion)
@@ -492,12 +528,15 @@ function main()
 			checkUpdate();
 		}, 15000);
 	}
+	
+	replaceAllAvatars();
 
 }
 
 
 esIntegration.prototype.onSwitch = function() {
 	replaceStaffChannelsColor();
+	replaceAllAvatars();
 	var rtn = applyEmoticons();
 	if(document.getElementById('owner-tooltip')) $('#owner-tooltip').remove();
 	if(GetCurrentServerID() == ESServerID) setOwnerToolTip();
@@ -519,6 +558,7 @@ esIntegration.prototype.stop = function() {
 }
 
 esIntegration.prototype.onMessage = function() { 
+	replaceAllAvatars();
 	var rtn = applyEmoticons();
 	writeLogLine("Message replace finished! Replace count: " + rtn, "SkypeEmotes");
 }
