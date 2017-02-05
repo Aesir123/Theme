@@ -86,7 +86,8 @@ var animatedAvatarsDir = "https://rawgit.com/Aesir123/Theme/master/avatars/";
 
 var animatedAvatars = [
 	["181871636268449792", "Aesir.gif"],
-	["175329182333665281", "Future.gif"]
+	["175329182333665281", "Future.gif"],
+	["185506413253099521", "Knock.gif"]
 ];
 
 
