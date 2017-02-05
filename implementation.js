@@ -1,4 +1,3 @@
-
 // implementation.js start
 
 
@@ -84,6 +83,24 @@ var owners = ['Cælestis', 'Arch']; // Who else?
 var ownersTooltips = [
 	"This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(", // Aesir
 	"I'm a potato : l Modified the theme to look nicer." // Priit
+];
+
+var channelsTag = [
+	["220645473747206145", "💬"], // general
+	["231874452508377088", "🎧"], // music
+//	["231143479953195008", ""], // offtopic
+	["256828044398952448", "🤖"], // bot reserved
+	["271024891548008449", "🐱"], // cat room
+//	["221599128013111298", ""], // beta test
+	["224688138608443392", "🎮"], // game chat
+	["221283829552381953", "📜"], // rules
+	["220913649634508802", "📜"], // news
+	["243082056563687424", "🏩"], // nfsw
+	["239037686000779265", "📜"], // theme
+	["220999021009829890", "📜"], // events
+	["220999136416235531", "📜"], // patchnotes
+	
+	//[, ""],
 ];
 
 var ranks = [
@@ -398,6 +415,26 @@ function replaceStaffChannelsColor()
 				break;
 			}
 		}
+	}
+	
+	applyChannelIcon();
+}
+
+function applyChannelIcon()
+{
+	if(GetCurrentServerID() != ESServerID)
+		return;
+	
+	for(var i = 0; i < channelsTag.length; i++)
+	{
+		var channelNameChild = document.querySelectorAll("[href$='" + channelsTag[i][0] + "'] > .channel-name")[0];
+		
+		if(channelNameChild.className.indexOf("es-theme-tagged") != -1)
+			continue;
+		
+		var channelName = channelNameChild.innerHTML;
+		channelNameChild.innerHTML = channelsTag[i][1] + " " + channelName/* + " " + channelsTag[i][1]*/;
+		channelNameChild.className += " es-theme-tagged";
 	}
 }
 
