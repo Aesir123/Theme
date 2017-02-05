@@ -1,5 +1,6 @@
 
 
+
 // implementation.js start
 
 
@@ -378,6 +379,11 @@ function applyEmoticon(name, url)
 	
 	for(var i = 0; i < emoticons.length; i++)
 	{
+		if(emoticons[i].className.indexOf('es-animated-emote') != -1)
+			continue;
+		
+		emoticons[i].className += " es-animated-emote";
+		
 		emoticons[i].src = url;
 		x++;
 	}
@@ -486,7 +492,7 @@ function guildsFullscreen()
 	
 }
 
-function replaceAvatars(avatars)
+function replaceAvatars(avatars, type)
 {
 	for(var i = 0; i < avatars.length; i++)
 	{
@@ -494,6 +500,30 @@ function replaceAvatars(avatars)
 		{
 			if(avatars[i].style.backgroundImage.indexOf(animatedAvatars[k][0]) != -1)
 			{
+				avatars[i].onclick = function() { setTimeout(function(){ replaceAllAvatars(); }, 250); };
+				
+				switch(type)
+				{
+					case 1:
+					{
+						avatars[i]
+						.parentNode
+						.childNodes[1]
+						.childNodes[0]
+						.childNodes[0]
+						.childNodes[0]
+						.childNodes[0]
+						.onclick = function() { setTimeout(function(){ replaceAllAvatars(); }, 250); };
+					}
+					break;
+					
+					case 3:
+					{
+						avatars[i].parentNode.onclick = function() { setTimeout(function(){ replaceAllAvatars(); }, 250); };
+					}
+					break;
+				}
+				
 				avatars[i].style.backgroundImage = 'url(' + animatedAvatarsDir + animatedAvatars[k][1] + ')';
 				break;
 			}
@@ -503,9 +533,11 @@ function replaceAvatars(avatars)
 
 function replaceAllAvatars()
 {
-	replaceAvatars(document.getElementsByClassName('avatar-large'));
-	replaceAvatars(document.getElementsByClassName('avatar-popout'));
-	replaceAvatars(document.getElementsByClassName('avatar-small'));
+	replaceAvatars(document.getElementsByClassName('avatar-large'), 1);
+	replaceAvatars(document.getElementsByClassName('avatar-popout'), 2);
+	replaceAvatars(document.getElementsByClassName('avatar-small'), 3);
+	replaceAvatars(document.getElementsByClassName('avatar-uploader-inner'), 4);
+	writeLogLine("Replaced all avatars!", "AAvatars");
 }
 
 
@@ -529,6 +561,10 @@ function main()
 			checkUpdate();
 		}, 15000);
 	}
+	
+	window.setInterval(function(){
+			applyEmoticons();
+		}, 1000);
 	
 	replaceAllAvatars();
 
