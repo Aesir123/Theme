@@ -145,7 +145,7 @@ span:active .modal:hover{
 
 
 	
-#user-profile-modal .header { background: transparent !important; overflow: hidden; height: 176px; }
+#user-profile-modal .header { background: transparent !important; overflow: hidden; height: 176px !important; }
 
 .user-popout .body { background: rgba(17, 59, 60, 0.53); }
 
@@ -2138,7 +2138,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-accounts-list .user-settings-modal-accounts-list-description .user-settings-modal-accounts-list-description-inner {color: #cccccc;}
 
-#user-profile-modal .tab-bar-container { background-color: #057f95;border-bottom: 1px solid rgba(0,0,0,0.9); top: 176px; }
+#user-profile-modal .tab-bar-container { background-color: #057f95;border-bottom: 1px solid rgba(0,0,0,0.9); top: 176px !important; }
 
 #user-profile-modal .guilds .section+.section {border-top: 1px solid transparent;}
 
