@@ -145,7 +145,7 @@ span:active .modal:hover{
 
 
 	
-#user-profile-modal .header {background: transparent !important;overflow: hidden;height: 182px;}
+#user-profile-modal .header { background: transparent !important; overflow: hidden; height: 176px; }
 
 .user-popout .body { background: rgba(17, 59, 60, 0.53); }
 
@@ -2138,7 +2138,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .settings-connections-wrapper .user-settings-modal-connections .user-settings-modal-accounts-list .user-settings-modal-accounts-list-description .user-settings-modal-accounts-list-description-inner {color: #cccccc;}
 
-#user-profile-modal .tab-bar-container {background-color: #057f95;border-bottom: 1px solid rgba(0,0,0,0.9);}
+#user-profile-modal .tab-bar-container { background-color: #057f95;border-bottom: 1px solid rgba(0,0,0,0.9); top: 176px; }
 
 #user-profile-modal .guilds .section+.section {border-top: 1px solid transparent;}
 
@@ -2271,7 +2271,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .spinner-pulsing-ellipsis .spinner-item {background-color: var(--main-color);}
 
-.activity strong { color: var(--main-color); }
+.activity strong { color: #0beaf7; }
 
 .message-text/* .member*/ {-webkit-transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); transition: background-color 0.25s ease-in, border-radius 0.3s cubic-bezier(0.68, -1.25, 0.228, 1.8); }
 
@@ -2362,3 +2362,13 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .guild-channels .channel-text.unread:not(.selected):not(.channel-muted) a { color: #0789a0; }
 
 .guild-channels header { margin: 5px 0 0; }
+
+#user-profile-modal .avatar-wrapper { background-color: transparent; }
+
+#user-profile-modal .avatar-wrapper .avatar-profile { left: -15px; top: -25px; }
+
+#user-profile-modal .header:after { background-image: linear-gradient(180deg,hsl(0, 0%, 0%),#11365d); height: 176px; }
+
+#user-profile-modal .header .header-info .header-info-inner .activity { color: #b8f4f5; }
+
+#user-profile-modal .header .header-info .header-info-inner .discord-tag .username { color: white; }
