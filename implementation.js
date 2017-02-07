@@ -251,13 +251,14 @@ function pushUpdateNotification(currVer, newVer)
 
 function checkUpdate()
 {
+	if(document.getElementById('themeUpdateNotice')) return;
+	
 	$.getJSON(updateFile,(data)=>{
       var version = readCookie('ESUpdate')
       var latest = data.version.split(".")
       if (latest != version){
 		  
 		createCookie('ESUpdate', data.version, 31);
-		if(document.getElementById('themeUpdateNotice')) return;
         var notice = $(`<div class="notice" id="themeUpdateNotice">[ES-Theme] Version ${latest.join(".")} is available: ${data.notes} <a class="btn btn-primary" href="#" onclick="location.reload()">Update</a></div>`).on("click",".notice-dismiss",()=>notice.remove()).appendTo(".app")
       }
     })
