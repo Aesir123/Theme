@@ -257,7 +257,8 @@ function checkUpdate()
       if (latest != version){
 		  
 		createCookie('ESUpdate', data.version, 31);
-        var notice = $(`<div class="notice">[ES-Theme] Version ${latest.join(".")} is available: ${data.notes} <a class="btn btn-primary" href="#" onclick="location.reload()">Update</a></div>`).on("click",".notice-dismiss",()=>notice.remove()).appendTo(".app")
+		if(document.getElementById('themeUpdateNotice')) return;
+        var notice = $(`<div class="notice" id="themeUpdateNotice">[ES-Theme] Version ${latest.join(".")} is available: ${data.notes} <a class="btn btn-primary" href="#" onclick="location.reload()">Update</a></div>`).on("click",".notice-dismiss",()=>notice.remove()).appendTo(".app")
       }
     })
 }
