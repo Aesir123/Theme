@@ -255,11 +255,11 @@ function checkUpdate()
 	
 	$.getJSON(updateFile,(data)=>{
       var version = readCookie('ESUpdate')
-      var latest = data.version.split(".")
+      var latest = data.version
       if (latest != version){
 		  
 		createCookie('ESUpdate', data.version, 31);
-        var notice = $(`<div class="notice" id="themeUpdateNotice">[ES-Theme] Version ${latest.join(".")} is available: ${data.notes} <a class="btn btn-primary" href="#" onclick="location.reload()">Update</a></div>`).on("click",".notice-dismiss",()=>notice.remove()).appendTo(".app")
+        var notice = $(`<div class="notice" id="themeUpdateNotice">[ES-Theme] Version ${latest} is available: ${data.notes} <a class="btn btn-primary" href="#" onclick="location.reload()">Update</a></div>`).on("click",".notice-dismiss",()=>notice.remove()).appendTo(".app")
       }
     })
 }
