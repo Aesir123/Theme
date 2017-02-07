@@ -1,5 +1,4 @@
 
-
 // implementation.js start
 
 
@@ -76,7 +75,7 @@ var staffChanClass = "staff-channel-name";
 
 var dir = process.env.APPDATA + "\\BetterDiscord\\plugins\\";
 
-var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.txt";
+var updateFile = "https://cdn.rawgit.com/Aesir123/Theme/e9cdd20d/update.json";
 
 var localUpdateFile = "ESUpdateData.txt";
 
@@ -210,11 +209,14 @@ function isOnIRCMode()
 }
 
 // Update shit start
+
+/*
 function makeUpdate(ver)
 {
 	 createCookie('ESUpdate', ver, 31);
 	 location.reload();
 }
+
 
 function updateTimer(ver)
 {
@@ -241,29 +243,23 @@ function pushUpdateNotification(currVer, newVer)
 		| Current Version: ' + currVer + ' | Remote Version: ' + newVer + ' | \
 		</div>');
 		
+	
+		
 	updateTimer(newVer);
 }
+*/
 
 function checkUpdate()
 {
-	
-	var txtFile = new XMLHttpRequest();
-	txtFile.open("GET", updateFile, true);
-	txtFile.onreadystatechange = function() {
-	  if (txtFile.readyState === 4) {
-		if (txtFile.status === 200) {
-		  var ver = parseInt(txtFile.responseText);
-		  var cookieVer = readCookie('ESUpdate');
-	
-			if(ver != parseInt(cookieVer))
-			{
-				pushUpdateNotification(cookieVer, ver);
-			}
-		}
-	  }
-	}
-	txtFile.send(null);
-	
+	$.getJSON(updateFile,(data)=>{
+      var version = readCookie('ESUpdate')
+      var latest = data.version.split(".")
+      if (latest != version){
+		  
+		createCookie('ESUpdate', data.version, 31);
+        var notice = $(`<div class="notice">[ES-Theme] Version ${latest.join(".")} is available: ${data.notes} <a class="btn btn-primary" href="#" onclick="location.reload()">Update</a></div>`).on("click",".notice-dismiss",()=>notice.remove()).appendTo(".app")
+      }
+    })
 }
 // Update shit end
 
