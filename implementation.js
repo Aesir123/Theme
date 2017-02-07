@@ -1,6 +1,5 @@
 
 
-
 // implementation.js start
 
 
@@ -135,6 +134,11 @@ var ranks = [
 ];
 
 var developerVersion = false;
+
+var esThemeConfig = {
+	showAnimatedAvatars: true
+};
+
 // Definitions end
 
 // Logging start
@@ -535,6 +539,9 @@ function replaceAvatars(avatars, type)
 
 function replaceAllAvatars()
 {
+	if(!esThemeConfig.showAnimatedAvatars)
+		return;
+	
 	replaceAvatars(document.getElementsByClassName('avatar-large'), 1);
 	replaceAvatars(document.getElementsByClassName('avatar-popout'), 2);
 	replaceAvatars(document.getElementsByClassName('avatar-small'), 3);
@@ -542,10 +549,34 @@ function replaceAllAvatars()
 	writeLogLine("Replaced all avatars!", "AAvatars");
 }
 
+function saveConfigFile()
+{
+	createCookie("es-theme-config", JSON.stringify(esThemeConfig), 9999);
+}
+
+function bindMenuToConfig()
+{
+	esThemeConfig.showAnimatedAvatars = document.getElementById("animatedAvatars").checked;
+	saveConfigFile();
+}
+
+function loadConfigFile()
+{
+	var cookieCfg = readCookie("es-theme-config");
+	if(cookieCfg == undefined || cookieCfg == null)
+	{
+		saveConfigFile();
+		loadConfigFile();
+		return;
+	}
+	
+	esThemeConfig = JSON.parse(cookieCfg);
+}
+
 
 function main()
 {
-
+	loadConfigFile();
 	var rtn = applyEmoticons();
 	writeLogLine("Head replace finished! Replace count: " + rtn, "SkypeEmotes");
 	replaceStaffChannelsColor();
@@ -586,7 +617,11 @@ esIntegration.prototype.load = function() {}
 
 esIntegration.prototype.observer = function () {}
 esIntegration.prototype.getSettingsPanel = function () {
-	return ""
+	var rtn = ""; /*'<input type="checkbox" name="animatedAvatars" id="animatedAvatars" value="Show animated avatars [Require Restart]" ' + (esThemeConfig.showAnimatedAvatars ? 'checked="checked"' : "") + '/>' +
+           '<br />' +
+           '<button onclick="bindMenuToConfig()"><b>Save</b></button>';*/
+		   
+	return rtn;
 }
 
 esIntegration.prototype.unload = function() {
