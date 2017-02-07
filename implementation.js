@@ -75,7 +75,7 @@ var staffChanClass = "staff-channel-name";
 
 var dir = process.env.APPDATA + "\\BetterDiscord\\plugins\\";
 
-var updateFile = "https://cdn.rawgit.com/Aesir123/Theme/e9cdd20d/update.json";
+var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.json";
 
 var localUpdateFile = "ESUpdateData.txt";
 
