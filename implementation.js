@@ -561,12 +561,6 @@ function bindMenuToConfig()
 function loadConfigFile()
 {
 	var cookieCfg = readCookie("es-theme-config");
-	if(cookieCfg == undefined || cookieCfg == null)
-	{
-		saveConfigFile();
-		loadConfigFile();
-		return;
-	}
 	
 	esThemeConfig = JSON.parse(cookieCfg);
 }
@@ -615,11 +609,34 @@ esIntegration.prototype.load = function() {}
 
 esIntegration.prototype.observer = function () {}
 esIntegration.prototype.getSettingsPanel = function () {
-	var rtn = ""; /*'<input type="checkbox" name="animatedAvatars" id="animatedAvatars" value="Show animated avatars [Require Restart]" ' + (esThemeConfig.showAnimatedAvatars ? 'checked="checked"' : "") + '/>' +
+	var rtn = '<input  type="checkbox" name="animatedAvatars" id="animatedAvatars" ' + (esThemeConfig.showAnimatedAvatars ? 'checked="checked"' : "") + '>Show animated avatars [Require Restart]</input>' +
            '<br />' +
-           '<button onclick="bindMenuToConfig()"><b>Save</b></button>';*/
+           '<button class="btn btn-primary es-theme-settings-btn" onclick="bindMenuToConfig()"><b>Save</b></button>';
 		   
-	return rtn;
+	var form = document.createElement("form");
+	form.className = "form";
+	
+	var animatedAvatarsCheckbox = document.createElement("input");
+	animatedAvatarsCheckbox.type = "checkbox";
+	animatedAvatarsCheckbox.id = animatedAvatarsCheckbox.name = "animatedAvatars";
+	animatedAvatarsCheckbox.checked = esThemeConfig.showAnimatedAvatars;
+	var animatedAvatarsCheckboxLabel = document.createElement("label");
+	animatedAvatarsCheckboxLabel.innerHTML = "Show animated avatars [Require Restart]";
+	
+	form.appendChild(animatedAvatarsCheckbox);
+	form.appendChild(animatedAvatarsCheckboxLabel);
+	
+	form.appendChild(document.createElement("br"));
+	
+	var saveBtn = document.createElement("button");
+	saveBtn.type = "button";
+	saveBtn.className = "btn btn-primary";
+	saveBtn.onclick = function() { bindMenuToConfig(); };
+	saveBtn.innerHTML = "Save";
+	
+	form.appendChild(saveBtn);
+		   
+	return form;
 }
 
 esIntegration.prototype.unload = function() {

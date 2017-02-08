@@ -1,4 +1,4 @@
 {
-    "version" : "0.0.1",
-    "notes" : "Reworked update system"
+    "version" : "0.0.2",
+    "notes" : "Added plugin settings (still need to expand them)"
 }
