@@ -59,9 +59,9 @@ var emojiList = [
 		["shake", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/shake.gif"],
 		["captain", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/captain.gif"],
 		["fubar", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/fubar.gif"],
-		["overthunking", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/overthunking.gif"]
+		["overthunking", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/overthunking.gif"],
+		["puke", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/puke.gif"]
 //		["", ""]
-	
 	];
 	
 var staffChanNames = [
