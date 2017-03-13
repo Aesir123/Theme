@@ -1412,9 +1412,9 @@ form.auth-form { background: rgba(0, 0, 0, 0.56); }
 
 .theme-dark.context-menu:hover { background: rgba(0, 0, 0, 0.85); box-shadow: 0 0 1px rgba(0, 255, 255, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); cursor: pointer; }
 
-.context-menu { background: rgba(0, 0, 0, 0.6); box-shadow: 0 0 1px rgba(0, 0, 0, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); }
+.context-menu { background: rgba(0, 0, 0, 0.85); box-shadow: 0 0 1px rgba(0, 255, 255, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); }
 
-.context-menu .item:hover { background: rgba(0, 0, 0, 0.69); box-shadow: 0 0 1px rgba(0, 0, 0, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); cursor: pointer; }
+.context-menu .item:hover { background: rgba(0, 0, 0, 0.85); box-shadow: 0 0 1px rgba(0, 255, 255, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); cursor: pointer; }
 
 .form .control-group label a { color: var(--main-color); }
 
@@ -2143,6 +2143,12 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 #user-profile-modal .guilds .section+.section {border-top: 1px solid transparent;}
 
 #user-profile-modal .guilds .section .section-header {color: #c7c7c7;}
+
+#user-profile-modal .guilds .section .connected-accounts { display: table !important; margin-top: -30px; }
+
+#user-profile-modal .guilds .section .connected-accounts .connected-account { display: flex; margin-top: 10px; padding-right: 10px; }
+
+#user-profile-modal .guilds .section .connected-accounts .connected-account .connected-account-name-inner .connected-account-name { color: #bdd0d8; }
 
 #user-profile-modal .guilds .guild .status {border: 2px solid var(--main-color);}
 
