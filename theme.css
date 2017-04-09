@@ -2519,3 +2519,8 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .search-popout .date-picker {
     border-top: 0;
 }
+/*2fa button hover color*/
+.user-settings-modal-security .btn-ghost:hover {
+    background: var(--hover-color);
+    border-color: transparent;
+}
