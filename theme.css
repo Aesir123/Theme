@@ -2383,3 +2383,72 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .message-group .avatar-large:hover { width: 100px !important; height: 100px !important; border-radius: 0 !important; border: 2px solid rgba(5,127,149,0.3); }
 
+/*Discord Nitro transparency fix*/
+.ui-form-text {
+    color: #b5b56a;
+}
+.ui-button.outlined {
+    color: #43b581;
+}
+.premium-settings.v1 .premium-features .premium-feature .ui-form-text.style-default {
+    color: #587dfd;
+}
+.user-settings-modal-security .btn-ghost {
+    background: #057f95;
+    border-radius: 20px;
+    border: 20px solid transparent;
+    padding: 10px 100px;
+	left: 55px;
+}
+
+/*Search function theming*/
+.search-results-wrap .scroller-wrap {
+    background-color: #0c0c0e;
+}
+.theme-dark .search-results-wrap .channel-separator .channel-name {
+    background-color: #0c0c0e;
+}
+.theme-dark .search-results-wrap .search-result .search-result-message.hit {
+    border: 2px solid rgb(5, 127, 149);
+}
+.theme-dark .search-results-wrap .search-result .hit {
+    background-color: rgb(12, 12, 14);
+    box-shadow: 0 0 50px 20px rgba(5, 127, 149, 0.3);
+}
+.theme-dark .search-results-wrap .search-header {
+    background-color: #0c0c0e;
+    box-shadow: 0 1px 1px rgb(5, 127, 149);
+	line-height: 10px;
+}
+.theme-dark .search-results-wrap .search-header .tab, .theme-dark .search-results-wrap .search-header .total-results {
+    color: rgb(0, 214, 253);
+	opacity: 0.5;
+}
+.search-results-wrap .search-header .tab.selected {
+    opacity: 1 !important;
+}
+.theme-dark .search-results-wrap .search-header .tab.selected, .theme-dark .search-results-wrap .search-header .tab:hover {
+    border-bottom: 2px solid #00d8ff;
+}
+.theme-dark .search-results-wrap .search-result.expanded {
+    border: 2px solid rgb(0, 216, 255);
+}
+.theme-dark .search-results-wrap .search-result.expanded .search-result-message.hit {
+    border-top: 2px solid rgba(0, 136, 255, 0.6);
+    border-bottom: 2px solid rgba(0, 136, 255, 0.6);
+    background-color: rgb(15, 26, 43);
+}
+.theme-dark .search-results-wrap .action-buttons .jump-button {
+    background-color: rgb(5, 127, 149);
+    color: hsla(0, 0%, 100%, 0.7);
+}
+.theme-dark .search-results-wrap .search-result:before {
+    background-image: linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(13, 94, 109, 0.2) 100%);
+}
+.theme-dark .search-results-wrap .search-result:after {
+
+    background-image: linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(13,94,109,0.2) 100%);
+}
+.search-results-wrap .scroller-wrap .scroller {
+    padding: 0px 0 0 0px;
+}
