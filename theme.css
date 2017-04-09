@@ -21,7 +21,6 @@
 
 
 
-
 .app, canvas {
 /*	position: absolute; */
 	width: 100%;
@@ -30,6 +29,10 @@
 	overflow: hidden;
 	background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
 	background-size: cover;
+}
+/*this property covers the background-image, unless transparent*/
+.theme-dark .layers {
+    background: transparent;
 }
 /* Modal start*/
 .modal {
@@ -2402,18 +2405,22 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 }
 
 /*Search function theming*/
+.theme-dark .search-results-wrap {
+    background-color: rgba(0, 0, 0, 0.5);
+}
 .search-results-wrap .scroller-wrap {
-    background-color: #0c0c0e;
+    background-color: rgba(12, 12, 14, 0.85);
 }
 .theme-dark .search-results-wrap .channel-separator .channel-name {
-    background-color: #0c0c0e;
+    background-color: transparent;
+	padding: 8px;
 }
 .theme-dark .search-results-wrap .search-result .search-result-message.hit {
     border: 2px solid rgb(5, 127, 149);
 }
 .theme-dark .search-results-wrap .search-result .hit {
     background-color: rgb(12, 12, 14);
-    box-shadow: 0 0 50px 20px rgba(5, 127, 149, 0.3);
+    box-shadow: 0 0 50px 20px rgba(5, 96, 149, 0.2);
 }
 .theme-dark .search-results-wrap .search-header {
     background-color: #0c0c0e;
@@ -2443,11 +2450,11 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
     color: hsla(0, 0%, 100%, 0.7);
 }
 .theme-dark .search-results-wrap .search-result:before {
-    background-image: linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(13, 94, 109, 0.2) 100%);
+    background-image: linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(5, 96, 149, 0.2) 100%);
 }
 .theme-dark .search-results-wrap .search-result:after {
 
-    background-image: linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(13,94,109,0.2) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(5, 96, 149,0.2) 100%);
 }
 .search-results-wrap .scroller-wrap .scroller {
     padding: 0px 0 0 0px;
@@ -2463,4 +2470,52 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .theme-dark .search-results-wrap .scroller-wrap .scroller::-webkit-scrollbar-thumb:active{
 	background-color: rgba(100, 172, 255, 0.6) !important;	
     border:1px solid rgba(100, 172, 255, 1) !important;
+}
+/*search popout*/
+.search-popout {
+    background-color: rgba(3, 87, 103, 0.95);
+}
+.theme-dark .search-popout {
+    box-shadow: 0 0 0 2px rgb(0, 99, 148);
+}
+.search-popout .search-option .filter, .search-popout .option .filter, .search-popout .option strong, .search-popout .option.user .displayed-nick, .react-datepicker .react-datepicker__day-name {
+    color: rgb(0, 199, 236) !important;
+}
+.search-popout .option:after, .search-popout .option.selected:after {
+    background: transparent;
+}
+.search-popout .option.selected {
+    background-color: rgba(33, 171, 224, 0.32);
+}
+.search-popout .option .answer {
+    font-weight: 400;
+    color: rgb(191, 191, 191);
+}
+.search-popout .option .non-text {
+    color: rgb(191, 191, 191);
+}
+.react-datepicker {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.react-datepicker .react-datepicker__header {
+    background-color: rgba(18, 49, 56, 0);
+    color: rgba(0,199,236,1);
+}
+.react-datepicker .react-datepicker__day--disabled, .react-datepicker .react-datepicker__day--outside-month {
+    background-color: #1e5469 !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+.react-datepicker .react-datepicker__day {
+    background-color: rgb(2, 83, 99);
+    color: rgb(0, 199, 236);
+}
+.react-datepicker__day.react-datepicker__day--outside-month {
+    background-color: #123746 !important;
+}
+.react-datepicker .react-datepicker__day.react-datepicker__day--today:after {
+    height: 7px;
+    background-color: rgb(0, 243, 255);
+}
+.search-popout .date-picker {
+    border-top: 0;
 }
