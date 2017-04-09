@@ -2452,3 +2452,15 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .search-results-wrap .scroller-wrap .scroller {
     padding: 0px 0 0 0px;
 }
+.theme-dark .search-results-wrap .scroller-wrap .scroller::-webkit-scrollbar-thumb{
+	background-color: rgba(100, 172, 255, 0.05) !important;
+    border:1px solid rgba(100, 172, 255, 0.20) !important;
+}
+.theme-dark .search-results-wrap .scroller-wrap .scroller::-webkit-scrollbar-thumb:hover{
+	background-color: rgba(100, 172, 255, 0.3) !important;	
+    border:1px solid rgba(100, 172, 255, 0.4) !important;
+}
+.theme-dark .search-results-wrap .scroller-wrap .scroller::-webkit-scrollbar-thumb:active{
+	background-color: rgba(100, 172, 255, 0.6) !important;	
+    border:1px solid rgba(100, 172, 255, 1) !important;
+}
