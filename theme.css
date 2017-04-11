@@ -5,28 +5,7 @@
  --hover-color: #045B6B;
 }
 
-.user-popout:before {
-    background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);
-}
-
-#user-profile-modal .header:before {
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-    content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);
-}
-
-.callout-backdrop {
-	background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
-	background-size: cover !important; 
-}
-
-.app, canvas {
-/*	position: absolute; */
-	width: 100%;
-	height: 100%;
-/*	z-index: -1;*/
-	overflow: hidden;
+.app, canvas, .callout-backdrop {
 	background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
 	background-size: cover;
 }
@@ -34,94 +13,14 @@
 .theme-dark .layers {
     background: transparent;
 }
-/* Modal start*/
-.modal {
-    opacity: 1!important;
-    -webkit-transform: scale(1) translateZ(0px)!important;
-            transform: scale(1) translateZ(0px)!important;
-    -webkit-animation:modalanim 300ms cubic-bezier(.3,.3,.18,1.88);
-            animation:modalanim 300ms cubic-bezier(.3,.3,.18,1.88);
-    -webkit-transition: all 100ms;
-	        transition: all 100ms;
-    -webkit-transition-delay:5s;
-            transition-delay:5s;
-}
-
-@-webkit-keyframes modalanim{
-    from{
-        -webkit-transform:scale(1.2);
-                transform:scale(1.2);
-        opacity:0;
-    }
-    
-    to{
-        -webkit-transform:scale(1);
-                transform:scale(1);
-        opacity:1;
-    }
-}
-
-@keyframes modalanim{
-    from{
-        -webkit-transform:scale(1.2);
-                transform:scale(1.2);
-        opacity:0;
-    }
-    
-    to{
-        -webkit-transform:scale(1);
-                transform:scale(1);
-        opacity:1;
-    }
-}
-span:active .modal{
-    -webkit-transition-delay:0s;
-            transition-delay:0s;
-    -webkit-transform:scale(1.2)!important;
-            transform:scale(1.2)!important;
-    opacity:0!important;
-}
-span:active .modal:hover{
-    -webkit-transform:scale(1)!important;
-            transform:scale(1)!important;
-    opacity:1!important;
-}
-
-
-@-webkit-keyframes bg-in {
-  0% {
-    opacity: 0;
-  }
-  100% {}
-}
-
-@keyframes bg-in {
-  0% {
-    opacity: 0;
-  }
-  100% {}
-}
-/* Modal end*/
-
 
 .account:after {content: "edited by Aesir & Arch"; color: rgba(255,255,255,0.2); font-size: 11px; font-weight: bold; position: absolute; bottom: 0; left: 130px; right: 0; opacity: 1;}
 
+#user-profile-modal .header { background: transparent !important; overflow: hidden; height: 176px !important; }
+
 .user-popout .header { background: rgba(0, 0, 0, .8); border-bottom: 2px var(--main-color) solid; }
 
-.user-popout {background: transparent !important;opacity: 1;}
-
-#user-profile-modal .header:before {
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url(var(--wlpimg)) !important;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.5)), url(var(--wlpimg)) !important;
-    content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);}
-
-.user-popout:before {
-    background-image: url(var(--wlpimg)) !important;
-    content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);}
-
-
-	
-#user-profile-modal .header { background: transparent !important; overflow: hidden; height: 176px !important; }
+.user-popout .header.streaming {background-color: rgba(89, 54, 149, 0.69);}
 
 .user-popout .body { background: rgba(17, 59, 60, 0.53); }
 
@@ -134,8 +33,6 @@ span:active .modal:hover{
 #user-profile-modal .avatar-profile {box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);border: none !important;margin-top: 4px;margin-left: 4px;background-color: transparent;}
 
 #user-profile-modal .guilds .avatar-large {background-color: transparent;}
-
-.user-popout .header.streaming{background-color: rgba(89, 54, 149, 0.69);}
 
 .Select-control { background: rgba(0, 0, 0, 0.62); border: var(--main-color); border-color: var(--main-color) var(--main-color) var(--main-color); }
 
@@ -395,6 +292,8 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 .guild-settings-modal-members .guild-settings-modal-members-footer a:hover { color: var(--hover-color); }
 
 .guild-settings-modal-members .guild-settings-modal-members-footer { border-top: 1px solid rgba(0, 0, 0, 0.36); }
+
+.guild-settings-modal-emoji .guild-settings-modal-emoji-header p, h6 { color: rgba(17, 192, 193, 0.9) !important; }
 
 #settings-roles .roles li:hover { background: none; }
 
@@ -1297,7 +1196,6 @@ span.replyer { border-radius: 3px; transition: .3s ease-in-out all; }
 
 .chat > .title-wrap > .title .channel-name { color: #BFBFBF; /*text-transform: capitalize;*/ }
 
-
 .member-username-inner[data-reactid*="102180837625200640"]:after { content: "Omniscient"; color: #E81C4F; margin-left: 0px; font-weight: 900; font-size: 120%; }
 
 .member-username-inner[data-reactid*="172218388880293888"] { color: #E81C4F; margin-left: 0px; font-weight: 900; font-size: 120%; }
@@ -1390,7 +1288,7 @@ form.auth-form { background: rgba(0, 0, 0, 0.56); }
 
 .context-menu { background: rgba(0, 0, 0, 0.85); box-shadow: 0 0 1px rgba(0, 255, 255, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); }
 
-.context-menu .item:hover { background: rgba(0, 0, 0, 0.85); box-shadow: 0 0 1px rgba(0, 255, 255, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); cursor: pointer; }
+.context-menu .item:hover, .theme-dark.context-menu .item:hover { background: rgba(0, 0, 0, 0.85); color: #ffffff; box-shadow: 0 0 1px rgba(0, 0, 0, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); cursor: pointer; }
 
 .form .control-group label a { color: var(--main-color); }
 
@@ -1409,8 +1307,6 @@ form.auth-form { background: rgba(0, 0, 0, 0.56); }
 .user-popout .footer { border-top: 2px var(--main-color) solid; }
 
 .user-popout .footer .quick-message-wrapper .input { border: 2px solid var(--main-color); background: #0C0C0C; color: #fff; }
-
-.theme-dark.context-menu .item:hover { background: rgba(0, 0, 0, 0.69); box-shadow: 0 0 1px rgba(0, 0, 0, 0.82), 0 1px 4px rgba(0, 0, 0, 0.1); cursor: pointer; }
 
 .guilds li:not(.active):not(:first-of-type) { opacity: 0.65; transition: 0.4s ease-in-out opacity; }
 
@@ -2215,32 +2111,29 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 }
 
 
-#user-profile-modal .guilds .section .section-header{color: #fff;}
+#user-profile-modal .guilds .section .section-header { color: #fff; }
 
-#user-profile-modal .guilds .section + .section{border: 0!important;}
+#user-profile-modal .guilds .section + .section { border: 0!important; }
 
-#user-profile-modal .guilds .section .note textarea:focus{background-color: rgba(0, 0, 0, 0.15);border: 1px solid rgba(0, 0, 0, 0.1);color: #e4e4e4;}
+#user-profile-modal .guilds .section .note textarea:focus { background-color: rgba(0, 0, 0, 0.15);border: 1px solid rgba(0, 0, 0, 0.1);color: #e4e4e4; }
 
-#user-profile-modal .guilds .section .connected-account .connected-account-name a{color: rgba(0, 176, 244, 0.6);font-weight: 700;transition: color 500ms;}
+#user-profile-modal .guilds .section .connected-account .connected-account-name a { color: rgba(0, 176, 244, 0.6);font-weight: 700;transition: color 500ms; }
+#user-profile-modal .guilds .section .connected-account:hover .connected-account-name a { color: rgba(0, 176, 244, 1); }
 
-#user-profile-modal .guilds .section .connected-account:hover .connected-account-name a{color: rgba(0, 176, 244, 1);}
+#user-profile-modal .guilds .guild { color: #a4aeb9;margin: 0 10px;transition: background 300ms; }
 
-#user-profile-modal .guilds .guild{color: #a4aeb9;margin: 0 10px;transition: background 300ms;}
+#user-profile-modal .guilds .guild .avatar-large { box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+#user-profile-modal .guilds .guild .avatar-large:empty { border-radius: 15px!important; }
 
-#user-profile-modal .guilds .guild .avatar-large{box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);}
+#user-profile-modal .guilds .guild:hover { border-radius: 5px;color: #fff; }
 
-#user-profile-modal .guilds .guild .avatar-large:empty{border-radius: 15px!important;}
+#user-profile-modal .guilds .guild .status { border: 2px solid rgba(64, 68, 74, 1); }
+#user-profile-modal .guilds .guild:hover .status { border: 2px solid rgba(133, 141, 150, 0.7); }
 
-#user-profile-modal .guilds .guild:hover{border-radius: 5px;color: #fff;}
+#user-profile-modal .guilds .guild .guild-name .discriminator { display: none; }
+#user-profile-modal .guilds .guild:hover .guild-name .discriminator { display: block; }
 
-#user-profile-modal .guilds .guild .status{border: 2px solid rgba(64, 68, 74, 1);}
-#user-profile-modal .guilds .guild:hover .status{border: 2px solid rgba(133, 141, 150, 0.7);}
-
-#user-profile-modal .guilds .guild .guild-name .discriminator{display: none;}
-#user-profile-modal .guilds .guild:hover .guild-name .discriminator{display: block;}
-
-
-#user-profile-modal footer .btn.add-friend{transition: background 500ms;}
+#user-profile-modal footer .btn.add-friend { transition: background 500ms; }
 
 
 .theme-dark #friends .friends-header .tab-bar .tab-bar-item.tab-bar-item-primary .badge {background-color: #f04747;color: #fff;}
@@ -2252,6 +2145,8 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 #friends .friends-table .friends-row .friends-column-guilds .avatar-small {background-color: var(--main-color);}
 
 .spinner-pulsing-ellipsis .spinner-item {background-color: var(--main-color);}
+
+/*Custom edits started about here*/
 
 .activity strong { color: #0beaf7; }
 
