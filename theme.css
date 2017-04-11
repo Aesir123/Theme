@@ -5,9 +5,6 @@
  --hover-color: #045B6B;
 }
 
-
-.callout-backdrop { background-color: black !important; background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important; -webkit-transition: 0.3s all ease; -o-transition: 0.3s all ease; -moz-transition: 0.3s all ease; transition: 0.3s all ease; background-size: cover !important; -webkit-filter: brightness(75%); }
-
 .user-popout:before {
     background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
     content: "";position: absolute;left: 0;top: 0;height: 100%;width: 100%;z-index: -1;background-position: 50% 50%;-webkit-filter: blur(3px);-webkit-transform: scale(1.05);transform: scale(1.05);
@@ -19,7 +16,10 @@
     content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;background-position: 50% 50%;background-size: cover !important;-webkit-filter: blur(3px);-webkit-transform: scale(1.1);transform: scale(1.1);
 }
 
-
+.callout-backdrop {
+	background-image: url("https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png") !important;
+	background-size: cover !important; 
+}
 
 .app, canvas {
 /*	position: absolute; */
@@ -42,7 +42,7 @@
     -webkit-animation:modalanim 300ms cubic-bezier(.3,.3,.18,1.88);
             animation:modalanim 300ms cubic-bezier(.3,.3,.18,1.88);
     -webkit-transition: all 100ms;
-	    transition:all 100ms;
+	        transition: all 100ms;
     -webkit-transition-delay:5s;
             transition-delay:5s;
 }
@@ -86,34 +86,7 @@ span:active .modal:hover{
             transform:scale(1)!important;
     opacity:1!important;
 }
-.callout-backdrop:active {
-  opacity: 0!important;
-  -webkit-transition: all 100ms!important;
-  transition: all 100ms!important;
-    -webkit-transition-delay:0s;
-            transition-delay:0s
-}
 
-.callout-backdrop {
-  -webkit-transition-delay: 5s;
-          transition-delay: 5s;
-}
-
-.callout-backdrop {
-  opacity: 0.9!important;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-  -webkit-animation-name: bg-in;
-  animation-name: bg-in;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-duration: 400ms;
-  animation-duration: 400ms;
-    -webkit-transition-delay:100s!important;
-            transition-delay:100s!important;
-}
 
 @-webkit-keyframes bg-in {
   0% {
