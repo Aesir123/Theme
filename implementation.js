@@ -61,7 +61,8 @@ var emojiList = [
 		["fubar", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/fubar.gif"],
 		["overthunking", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/overthunking.gif"],
 		["puke", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/puke.gif"],
-		["dimensionalthinking", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/dimensionalthinking.gif"]
+		["dimensionalthinking", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/dimensionalthinking.gif"],
+		["slowclap", "https://raw.githubusercontent.com/Aesir123/Theme/master/skypeEmoji/slowclap.gif"]
 //		["", ""]
 	];
 	
