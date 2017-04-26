@@ -2437,3 +2437,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 #rtc-debug-modal #users-section .user-list .avatar-small {
     margin: 0 4px 0 0 !important;
 }
+/*NSFW channel warning background*/
+.ui-flex.flex-horizontal.flex-justify-center.flex-align-stretch.flex-nowrap.theme-dark {
+    background-color: rgba(0, 0, 0, 0.9);
+}
