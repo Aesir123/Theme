@@ -2441,3 +2441,37 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .ui-flex.flex-horizontal.flex-justify-center.flex-align-stretch.flex-nowrap.theme-dark {
     background-color: rgba(0, 0, 0, 0.9);
 }
+/*quickswitcher ctrl+k*/
+.quickswitcher.dark {
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 50px rgb(0, 0, 0),0 0 0 1px rgba(0, 180, 255, 0.37);
+}
+.quickswitcher.dark .big-input {
+    background-color: rgba(5, 127, 149, 0.8);
+    box-shadow: 0 0px 40px rgb(5, 127, 149),0 0 0 2px rgb(0, 0, 0);
+}
+.quickswitcher.dark .scroller-wrap:before {
+    background-image: none;
+}
+.quickswitcher.dark .result {
+    color: #00e5ff;
+}
+.quickswitcher.dark .result.selected {
+    background-color: rgba(5, 127, 149, 0.6);
+}
+.keybind-shortcut.dark span {
+    border-color: rgba(0, 216, 255, 0.1);
+    background-color: rgba(0, 243, 255, 0.25);
+}
+.quickswitcher.dark .scroller-wrap .scroller::-webkit-scrollbar-thumb {
+	background-color: rgba(100, 172, 255, 0.05) !important;
+    border:1px solid rgba(100, 172, 255, 0.20) !important;
+}
+.quickswitcher.dark .scroller-wrap .scroller::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(100, 172, 255, 0.3) !important;	
+    border:1px solid rgba(100, 172, 255, 0.4) !important;
+}
+.quickswitcher.dark .scroller-wrap .scroller::-webkit-scrollbar-thumb:active {
+	background-color: rgba(100, 172, 255, 0.6) !important;	
+    border:1px solid rgba(100, 172, 255, 1) !important;
+}
