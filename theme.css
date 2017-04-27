@@ -251,8 +251,6 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 
 #permissions .permission-actions.disabled > div { border: #565963; background: #565963; position: relative; }
 
-.checkbox .checkbox-inner span { background: rgba(0, 20, 40, 0.70); transition: .2s linear all !important; }
-
 .form .control-group .help-text { color: #B6BBC1; }
 
 .avatar-uploader a { color: var(--main-color); }
@@ -401,11 +399,7 @@ ld-channels ul .channel-voice-states li.speaking .avatar-small { background-colo
 
 .user-settings-modal-games .games-table .games-row .item-overlay { border-bottom: 1px solid rgba(0, 0, 0, 0.4); }
 
-.now-playing { background: var(--main-color); padding: 22px; }
-
-.checkbox .checkbox-inner.alt input[type=checkbox] + span { background: var(--main-color) !important; }
-
-.checkbox .checkbox-inner.alt input[type=checkbox]:checked + span:after { border-color: #43B581; }
+.now-playing { background: rgba(5, 127, 149, 0.7); padding: 22px; }
 
 .sensitivity .slider .slider-bar-auto { background-color: rgba(0, 0, 0, 0.44); }
 
@@ -737,8 +731,6 @@ a:link { color: var(--main-color); }
 
 .settings .settings-actions { background-color: rgba(0, 0, 0, 0.76); border-top: 2px solid var(--main-color); }
 
-.checkbox .checkbox-inner + span { color: #fff; }
-
 .highlight { color: var(--main-color); background: rgba(0, 0, 0, 0.51); border-radius: 3px; transition: .3s all ease-in-out; }
 
 .user-settings-modal-connections .user-settings-modal-accounts-list .connect-container .name { color: #fff; }
@@ -750,8 +742,6 @@ a:link { color: var(--main-color); }
 .user-settings-modal-connections .user-settings-modal-connections-list { box-shadow: 0 -1px rgba(0, 0, 0, 0.37); }
 
 .tab-bar.TOP .tab-bar-item.selected { border-bottom: 2px solid var(--hover-color); color: #fff;}
-
-.checkbox .checkbox-inner input[type=checkbox]:checked + span { background-color: var(--main-color) !important; border-color: var(--main-color) !important; transition: .2s ease-in-out all !important; }
 
 .radio .radio-inner span:after { background: var(--main-color); }
 
@@ -1356,8 +1346,6 @@ button.win-minimize:hover { background-color: #03B584; border-radius: 3px; }
 
 .tipsy-inner { border-radius: 3px; }
 
-.bda-slist .checkbox { margin-left: 18px; margin-top: 0px; }
-
 a[data-reactid*=".0.1.1.0.1.0.0.1.1.0"] { background-color: var(--main-color); border-radius: 3px; }
 
 a[data-reactid*=".0.1.1.0.1.0.0.1.1.0"]:hover { background-color: var(--main-color) !important; }
@@ -1407,8 +1395,6 @@ ul.bda-slist { margin-top: 18px; width: 588px; margin-left: -34px; }
 .bda-slist .bda-right .btn { margin-left: 20px; }
 
 .bda-slist .bda-right .bda-plugin-settings { margin-top: 3px; }
-
-#user-profile-modal .guilds .guild .status { width: 9px; height: 9px; }
 
 div#bd-customcss-innerpane { margin-top: 18px; width: 588px; margin-left: -34px; }
 
@@ -1648,16 +1634,6 @@ div#bd-pub-button:hover { background-color: #43B581 !important; transition: .3s 
 #rtc-connection .btn-info:after { background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_info_white_24px.svg) !important; zoom: 2.5; }
 
 #rtc-connection .btn-disconnect:after { background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_call_end_white_24px.svg); zoom: 1.3; }
-
-.checkbox .checkbox-inner input[type=checkbox]:checked + span:after { background: var(--hover-color); top: -3px; border-right: 0px; border-bottom: 0px; transform: translate(10px, 0px); box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4); }
-
-.checkbox .checkbox-inner input[type=checkbox]:checked + span { background: #ADB8E1; border: 0px; height: 15px; width: 30px; top: 2px; border-radius: 100px; }
-
-.checkbox .checkbox-inner span { top: 2px; height: 15px; width: 30px; border-radius: 100px; border: 0px; }
-
-.checkbox .checkbox-inner + span { margin-left: 20px; }
-
-.checkbox .checkbox-inner span:after{ content:"";  position:absolute;  background:var(--hover-color);  transform:rotate(0deg)translate(-5px,0px);  height:20px!important;  width:20px!important;  top:-3px;  border-radius:100px;  border-right:0px;  border-bottom:0px;  transition:all 200ms ease;  box-shadow:0px 2px 3px rgba(0,0,0,0.3)}
 
 .theme-dark .channel-pins-wrap { background-color: rgba(0, 0, 0, 0.45) !important; }
 
@@ -2040,11 +2016,11 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 #user-profile-modal .guilds .section .connected-accounts .connected-account .connected-account-name-inner .connected-account-name { color: #bdd0d8; }
 
-#user-profile-modal .guilds .guild .status {border: 2px solid var(--main-color);}
-
 #user-profile-modal .guilds .guild:hover .status {border: 2px solid var(--hover-color);}
 
 #user-profile-modal .avatar-profile .status {border: 4px solid var(--hover-color);}
+
+#user-profile-modal .avatar-profile .status, #user-profile-modal .guilds .guild .status { border-radius: 0; }
 
 .quick-message {border: 2px solid var(--main-color); color: #87909c; background: rgba(0, 0, 0, 0.6);}
 
@@ -2145,8 +2121,9 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 #user-profile-modal .guilds .guild:hover { border-radius: 5px;color: #fff; }
 
-#user-profile-modal .guilds .guild .status { border: 2px solid rgba(64, 68, 74, 1); }
-#user-profile-modal .guilds .guild:hover .status { border: 2px solid rgba(133, 141, 150, 0.7); }
+#user-profile-modal .guilds .guild .status { border: 2px solid rgba(64, 68, 74, 1); width: 9px; height: 9px; }
+
+#user-profile-modal .header .header-info .profile-badge.badge-premium { margin: -25px 25px 0 -25px; }
 
 #user-profile-modal .guilds .guild .guild-name .discriminator { display: none; }
 #user-profile-modal .guilds .guild:hover .guild-name .discriminator { display: block; }
@@ -2272,7 +2249,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .message-group .avatar-large:hover { width: 100px !important; height: 100px !important; border-radius: 0 !important; border: 2px solid rgba(5,127,149,0.3); }
 
-/*Discord Nitro transparency fix*/
+/*----------Discord Nitro transparency fix----------*/
 .ui-form-text {
     color: #b5b56a;
 }
@@ -2293,7 +2270,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
     color: white;
 }
 
-/*Search function theming*/
+/*----------Search function theming----------*/
 .theme-dark .search-results-wrap {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -2360,7 +2337,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	background-color: rgba(100, 172, 255, 0.6) !important;	
     border:1px solid rgba(100, 172, 255, 1) !important;
 }
-/*search popout*/
+/*----------search popout----------*/
 .search-popout {
     background-color: rgba(3, 87, 103, 0.95);
 }
@@ -2408,12 +2385,12 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .search-popout .date-picker {
     border-top: 0;
 }
-/*2fa button hover color*/
+/*----------2fa button hover color----------*/
 .user-settings-modal-security .btn-ghost:hover {
     background: var(--hover-color);
     border-color: transparent;
 }
-/*RTC*/
+/*----------RTC----------*/
 #rtc-debug-modal #users-section .user-list {
     border-right: 2px solid #057f95;
 }
@@ -2437,11 +2414,11 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 #rtc-debug-modal #users-section .user-list .avatar-small {
     margin: 0 4px 0 0 !important;
 }
-/*NSFW channel warning background*/
+/*----------NSFW channel warning background----------*/
 .ui-flex.flex-horizontal.flex-justify-center.flex-align-stretch.flex-nowrap.theme-dark {
     background-color: rgba(0, 0, 0, 0.9);
 }
-/*quickswitcher ctrl+k*/
+/*----------quickswitcher ctrl+k----------*/
 .quickswitcher.dark {
     background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0 2px 50px rgb(0, 0, 0),0 0 0 1px rgba(0, 180, 255, 0.37);
@@ -2475,3 +2452,76 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 	background-color: rgba(100, 172, 255, 0.6) !important;	
     border:1px solid rgba(100, 172, 255, 1) !important;
 }
+/*---------CHECKBOXES----------*/
+/*alternate slider(games menu-overlay of active game) container*/
+.checkbox .checkbox-inner.alt input[type=checkbox] + span { 
+    background: rgba(0,20,40,1) !important;
+    border: 1px solid var(--hover-color) !important;
+}
+/*alternate activated slider*/
+.checkbox .checkbox-inner.alt input[type=checkbox]:checked + span:after { 
+    border: 1px solid var(--main-color);
+}
+/*Checkbock text color*/
+.checkbox .checkbox-inner + span { 
+    color: #fff; 
+}
+/*Activeted slider*/
+.checkbox .checkbox-inner input[type=checkbox]:checked + span:after { 
+    background: rgba(5, 127, 149, 1); 
+    top: 2px; 
+    border: 1px solid var(--main-color);
+    transform: translate(5px, -3px);
+}
+/*Active container*/
+.checkbox .checkbox-inner input[type=checkbox]:checked + span {
+    background-color: rgba(0,20,40,1) !important; 
+    border: 1px solid var(--main-color) !important; 
+    border-radius: 0;
+    transition: .2s ease-in-out all !important; 
+    height: 13px; 
+    width: 30px; 
+    top: 2px; 
+}
+/*Inactive container*/
+.checkbox .checkbox-inner span { 
+    background: rgba(0, 20, 40, 0.70); 
+    transition: .2s linear all !important; 
+    top: 2px; 
+    height: 13px; 
+    width: 30px; 
+    border-radius: 0;
+    border: 1px solid var(--hover-color); 
+}
+/*Text distance from box*/ 
+.checkbox .checkbox-inner + span { 
+    margin-left: 20px; 
+}
+/*Slider*/
+.checkbox .checkbox-inner span:after{
+    content: "";
+    position: absolute;
+    background: rgba(5, 127, 149, 0.3);
+    transform: translate(-1px,-3px);
+    height: 11px !important;
+    width: 18px !important;
+    top: 2px;
+    border: 1px solid rgba(5, 127, 149, 0.8);
+    border-radius: 0px;
+    transition: all 200ms ease;
+}
+/*Server mute context menu toggle padding*/
+.context-menu .item-toggle { 
+    padding: 5px 20px 5px 9px; 
+}
+/*simple square checkboxes(comment other checkbox properties entirely)
+.checkbox .checkbox-inner input[type=checkbox]:checked+span {
+    background-color: rgba(0, 184, 255, 0.54);
+    border-color: rgba(0, 255, 231, 0.25);
+}
+.checkbox .checkbox-inner span {
+    border: 2px solid rgba(0, 131, 152, 0.7);
+}
+.form .checkbox-group {
+    color: white;
+}*/
