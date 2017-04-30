@@ -81,7 +81,7 @@ var updateFile = "https://rawgit.com/Aesir123/Theme/master/update.json";
 
 var localUpdateFile = "ESUpdateData.txt";
 
-var owners = ['Cælestis', 'Arch']; // Who else?
+var owners = ['Aesir', 'Arch']; // Who else?
 
 var animatedAvatarsDir = "https://rawgit.com/Aesir123/Theme/master/avatars/";
 
@@ -267,23 +267,80 @@ function checkUpdate()
 }
 // Update shit end
 
-function pushDoubleClickEdit()
+function getChildElementByClassName(parent, className)
+{
+    for(var i = 0; i < parent.childNodes.length; i++)
+    {
+        if (parent.childNodes[i].className == className)
+            return parent.childNodes[i];
+
+        if(parent.childNodes.length != 0)
+        {
+            var rtn_recursive = getChildElementByClassName(parent.childNodes[i], className);
+            if (rtn_recursive != null)
+                return rtn_recursive;
+        }
+    }
+
+    return null;
+}
+
+function convertQuoteText(string)
+{
+    var idx = -1;
+
+    while ((idx = string.indexOf(' <span id=\"huan\">')) != -1)
+        string = string.replace(' <span id=\"huan\">', ": l");
+
+    while((idx = string.indexOf('<!--')) != -1)
+        string = string.replace(string.substring(string.indexOf('<!--'), string.indexOf('-->') + 3), "");
+
+    while ((idx = string.indexOf('</span>')) != -1)
+        string = string.replace('</span>', "");
+
+    var str = '<img draggable="false" class="emoji" alt="';
+    while ((idx = string.indexOf(str)) != -1)
+    {
+        string = string.replace(str, "");
+        string = string.replace(string.substring(string.indexOf('"'), string.indexOf('>') + 1), "");
+    }
+
+    return string;
+}
+
+function pushQuote()
 {
 	
 	writeLogLine("Setting up dbl-clk edit...", "Misc");
 	$(document).on("dblclick.dce", function(e) {
         var target = $(e.target);
+		
         if(target.parents(".message").length > 0) {
-            var msg = target.parents(".message").first();
-            var opt = msg.find(".btn-option");
-            opt.click();
+            var msg_root = target.parents(".message").first()[0]; //.first()[0].childNodes[0].childNodes[0].childNodes[2];
+			
+            var msg = getChildElementByClassName(msg_root, "markup");
 
-            $.each($(".popout .btn-item"), (index, value) => {
-                var option = $(value);
-                if(option.text() === "Edit") {
-                    option.click();
-                }
-            });
+			$(msg).contents().each(function() {
+				if(this.nodeType === Node.COMMENT_NODE) {
+					$(this).remove();
+				}
+			});
+
+			var message_text = msg.innerHTML;
+
+			if (message_text.length != 0)
+			{
+			    var user_name = getChildElementByClassName(msg_root, 'user-name');
+			    if (user_name == null)
+			        user_name = getChildElementByClassName(msg_root.parent, 'user-name');
+
+			    var quote_string = "```\r\nQuoted from " + user_name.innerHTML
+			        + "\r\n\r\n" + convertQuoteText(message_text) + "\r\n\r\n```\r\n";
+
+			    var text_area = document.getElementsByTagName('textarea')[0];
+			    text_area.value = quote_string;
+			    document.getElementsByTagName('textarea')[0].style.height = "144px";
+			}
 
         }
 	});
@@ -580,7 +637,7 @@ function main()
 	{ 
 		setOwnerToolTip();
 	}
-	pushDoubleClickEdit();
+	pushQuote();
 	
 	if(!developerVersion)
 	{
@@ -594,7 +651,7 @@ function main()
 		}, 1000);
 	
 	replaceAllAvatars();
-
+	
 }
 
 
