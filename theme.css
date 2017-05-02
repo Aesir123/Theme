@@ -18,13 +18,13 @@
 
 #user-profile-modal .header { background: transparent !important; overflow: hidden; height: 176px !important; }
 
-.user-popout .header { background: rgba(0, 0, 0, .8); border-bottom: 2px var(--main-color) solid; }
+.user-popout .header { background: rgba(0, 0, 0, .95); border: 2px #184554 solid; }
 
 .user-popout .header.streaming {background-color: rgba(89, 54, 149, 0.69);}
 
-.user-popout .body { background: rgba(17, 59, 60, 0.53); }
+.user-popout .body { background: rgb(24, 69, 84); }
 
-.user-popout .footer {background: rgba(0, 0, 0, .8);}
+.user-popout .footer {background: transparent;}
 
 .user-popout .avatar-wrapper .avatar-popout {border: none;background-color: transparent;}
 
@@ -1292,8 +1292,6 @@ form.auth-form { background: rgba(0, 0, 0, 0.56); }
 
 .user-popout .avatar-wrapper .avatar-popout { border: 4px solid var(--hover-color); background-color: var(--hover-color); }
 
-.user-popout .footer { border-top: 2px var(--main-color) solid; }
-
 .user-popout .footer .quick-message-wrapper .input { border: 2px solid var(--main-color); background: #0C0C0C; color: #fff; }
 
 .guilds li:not(.active):not(:first-of-type) { opacity: 0.65; transition: 0.4s ease-in-out opacity; }
@@ -1523,7 +1521,7 @@ a.avatar-small[style*="font-size: 18px;"] { top: -4px; }
 
 .guild-channels .channel-text:hover { background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.4) 85%, rgba(46, 49, 54, 0)) !important; }
 
-.guild-channels .channel-text:hover.channel-muted:before, .guild-channels .channel-text:hover:not(.unread):before { border-left: 4px solid var(--main-color); }
+.guild-channels .channel-text:hover.channel-muted:before, .guild-channels .channel-text:hover:not(.unread):before { border-left: 4px solid var(--main-color) !important; }
 
 .guild-channels .channel-text.unread:not(.selected):not(.channel-muted):before { background: var(--hover-color); }
 
@@ -1531,7 +1529,7 @@ a.avatar-small[style*="font-size: 18px;"] { top: -4px; }
 
 .user-settings-locale p { color: #8E8E8E; }
 
-.guild-channels .channel-text.selected:before { border-left: 4px solid var(--main-color); }
+.guild-channels .channel-text.selected:before { border-left: 4px solid var(--main-color) !important; }
 
 .guild-channels .channel-voice-states li.speaking .avatar-small { background-color: var(--main-color); border: 2px solid var(--main-color); }
 
@@ -2153,7 +2151,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 
 .channel-members .member+h2 { margin-top: 15px; }
 
-.user-popout { background: rgb(32, 80, 112) !important; }
+.user-popout { background: transparent !important; }
 
 .status-invisible, .status-offline { background-color: #999999; }
 
@@ -2525,3 +2523,13 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .form .checkbox-group {
     color: white;
 }*/
+/*User popout modding*/
+.user-popout .footer .quick-message-wrapper {
+    margin: 0;
+    padding: 12px 10px;
+    border: 2px #184554 solid;
+    background: rgba(0,0,0,0.95);
+}
+.user-popout .footer {
+    border-top: 0;
+}
