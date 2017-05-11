@@ -669,7 +669,7 @@ textarea { background: transparent !important; }
 
 .create-guild-container .create-or-join .actions .or { color: #000; -webkit-filter: invert(100%); }
 
-.form .form-inner { background-color: rgba(0, 0, 0, 0.8); }
+.form .form-inner { background-color: rgba(0, 0, 0, 0.8); color: #E6E6E6; }
 
 .form header { color: var(--main-color); }
 
@@ -700,6 +700,8 @@ textarea { background: transparent !important; }
 .create-guild-container .action:hover.create .btn { background-color: var(--hover-color); }
 
 .form .btn-primary:hover, .form .btn-default:hover { background-color: var(--hover-color) !important; border: 0px transparent; }
+
+.form .btn.red:hover { background-color: red !important; }
 
 .tab-bar.SIDE .tab-bar-item:before { border-left: none; }
 
@@ -2788,6 +2790,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 }
 .emoji-picker .scroller .emoji-item {
 	background-size: contain !important;
+	background-repeat: no-repeat !important;
 }
 .emoji-picker .scroller .emoji-item.selected {
 	background-color: var(--main-color) !important;
@@ -2859,6 +2862,9 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 }
 .ui-tab-bar.SIDE .ui-tab-bar-item {
     margin-bottom: 1px;
+}
+.ui-button.brand.filled:not(.disabled):active {
+    background-color: #1495a2;
 }
 /*my account*/
 .theme-dark .ui-card-primary {
@@ -3032,6 +3038,20 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 }
 .theme-dark .ui-text-input.emoji-alias-input .input {
     background-color: rgba(0, 39, 47, 0.15);
+}
+/*public servers*/
+#pubslayer .ui-standard-sidebar-view {
+    background-image: url(https://cdn.rawgit.com/Aesir123/Theme/master/0_00000002.png) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+}
+#pubslayer .sidebar-region, #pubslayer .content-region {
+    background: rgba(0, 0, 0, 0.6);
+}
+.theme-dark .ui-card-primary .ui-form-title.h5 {
+    color: #fff;
 }
 /*-------------------------------
 ----------end settings-----------
