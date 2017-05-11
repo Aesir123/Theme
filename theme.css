@@ -2791,6 +2791,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 .emoji-picker .scroller .emoji-item {
 	background-size: contain !important;
 	background-repeat: no-repeat !important;
+	background-position: 50% !important;
 }
 .emoji-picker .scroller .emoji-item.selected {
 	background-color: var(--main-color) !important;
@@ -2827,7 +2828,7 @@ body,.channel-members .member .member-username { -webkit-font-smoothing: antiali
 }
 .ui-standard-sidebar-view .sidebar-region .sidebar {
     width: 220px;
-    padding: 40px 5px 30px 0px;
+    padding: 40px 5px 30px 20px;
 }
 .ui-standard-sidebar-view .sidebar-region {
     flex: 1 0 100px;
