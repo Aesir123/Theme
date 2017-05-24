@@ -95,8 +95,8 @@ var animatedAvatars = [
 
 
 var ownersTooltips = [
-	"This is the owner of the theme you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(", // Aesir
-	"I'm a potato : l Modified the theme to look nicer." // Priit
+	"This is the owner of the plugin you're using, cool, isn't it? Drop him a thank or rather give him some pussy, he needs that so much! :(", // Aesir
+	"I'm a potato : l I made the theme." // Priit
 ];
 
 var channelsTag = [
@@ -375,6 +375,12 @@ function setOwnerToolTip()
 			if(document.getElementById('owner-tooltip')) $('#owner-tooltip').remove(); 
 		 };
 	}
+	
+	//set .account:after watermark
+	document.styleSheets[0].addRule('.account::after','width: 100px !important');
+	document.styleSheets[0].insertRule('.account::after { width: 100px !important }', 0);
+	document.styleSheets[0].addRule('.account::after','content: "Plugin made by Aesir Elegant Blue by Arch" !important');
+	document.styleSheets[0].insertRule('.account::after { content: "Plugin made by Aesir Elegant Blue by Arch" !important }', 0);
 	
 	writeLogLine("Owners style applied!", "Theme");
 }
