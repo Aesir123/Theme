@@ -376,12 +376,6 @@ function setOwnerToolTip()
 		 };
 	}
 	
-	//set .account:after watermark
-	document.styleSheets[0].addRule('.account::after','width: 100px !important');
-	document.styleSheets[0].insertRule('.account::after { width: 100px !important }', 0);
-	document.styleSheets[0].addRule('.account::after','content: "Plugin made by Aesir Elegant Blue by Arch" !important');
-	document.styleSheets[0].insertRule('.account::after { content: "Plugin made by Aesir Elegant Blue by Arch" !important }', 0);
-	
 	writeLogLine("Owners style applied!", "Theme");
 }
 
@@ -417,6 +411,12 @@ function loadTheme()
 		link.href = 'https://rawgit.com/Aesir123/Theme/master/theme.css';
 		link.media = 'all';
 		head.insertBefore(link, customCss);
+		
+		//set .account:after watermark
+		document.styleSheets[0].addRule('.account::after','width: 100px !important');
+		document.styleSheets[0].insertRule('.account::after { width: 100px !important }', 0);
+		document.styleSheets[0].addRule('.account::after','content: "Plugin made by Aesir Elegant Blue by Arch" !important');
+		document.styleSheets[0].insertRule('.account::after { content: "Plugin made by Aesir Elegant Blue by Arch" !important }', 0);
 	}
 	else
 		writeLogLine("Custom css already applied!", "Theme");
