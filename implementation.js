@@ -86,7 +86,7 @@ var owners = ['Aesir', 'Arch']; // Who else?
 var animatedAvatarsDir = "https://rawgit.com/Aesir123/Theme/master/avatars/";
 
 var animatedAvatars = [
-	["181871636268449792", "Aesir.gif"],
+//	["181871636268449792", "Aesir.gif"],
 	["185506413253099521", "Knock.gif"],
 	["183206624117129216", "Rio.gif"],
 	["130372850757402625", "Arch.gif"]
